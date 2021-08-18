@@ -1,0 +1,100 @@
+<html >
+<head>
+<script>
+var img1=new Image();img1.src='contents/../media/add2basket.png';
+var img2=new Image();img2.src='contents/../media/favourites.png';
+
+var tf=parent.tf,d=document;
+var forceAllLang=false;
+var loadInProgress=-1;
+var arrIFrame=[];
+
+function loadExecute(url,id,isLang,force) {
+	if (!d.createElement) {return true};
+
+	if(typeof(isLang)=='undefined'||!isLang)isLang=false;
+
+	if (!arrIFrame[id]) {
+		if (!d.getElementById(id)) {
+			var iframe=document.createElement('iframe');
+			iframe.name=id;
+			iframe.id=id;
+			arrIFrame[id] = d.body.appendChild(iframe);
+		}
+		else{
+			arrIFrame[id] = d.getElementById(id);
+		}
+
+		if (d.frames) {
+			arrIFrame[id] = d.frames[id];
+		}
+
+		if(window.opera){
+			setTimeout('loadLoad("'+url+'","'+id+'",'+isLang+')',10);
+			return false;
+		}
+
+		loadLoad(url,id,isLang);
+	}
+	else if(tf.arrObj[id]&&!forceAllLang){
+		var doc=getDoc(arrIFrame[id]);
+		loadCallback(doc,id);
+	}
+	else if(force||(forceAllLang&&tf.arrObj[id])){
+		loadLoad(url,id,isLang);
+	}
+
+	return false;
+}
+function loadLoad(url,id,isLang){
+	if (tf.arrObj[id]) {
+		if (loadInProgress == -1) loadInProgress+=2;
+		else loadInProgress++;
+	}
+
+	var doc=getDoc(arrIFrame[id]);
+	doc.location.replace(tf.wm.url(url,tf.lmd[id]?tf.lmd[id]:'-',isLang));
+}
+
+function getDoc(o){
+	var doc;
+	if(o.document){doc=o.document;} // For IE5 and Opera
+	else if(o.contentDocument){doc=o.contentDocument;} // For NS6
+	else if(o.contentWindow){doc=o.contentWindow.document;} // For IE5.5 and IE6
+	return doc;
+}
+
+function loadCallback(doc,id) {
+	var el=tf.arrObj[id];
+	try{
+		var s=doc.body.innerHTML;
+		if(!tf.content.location.href.match(/contents\/.*\/.*\.html/)){
+			s=s.replace(/\.\.\/media/g,(tf.lang!='en-us'?'../':'')+'contents/media');
+		}
+		el.innerHTML=s;
+	}catch(e){}
+
+	if(loadInProgress>0)loadInProgress--;
+}
+</script>
+</head>
+<body>
+
+<script>tf.xLoaded=true;</script>
+
+<iframe id="price" name="price" src="about:blank" border="0" width="0" height="0"></iframe>
+<iframe id="globecharge1" name="globecharge1" src="about:blank" border="0" width="0" height="0"></iframe>
+<iframe id="globecharge2" name="globecharge2" src="about:blank" border="0" width="0" height="0"></iframe>
+<iframe id="reseller" name="reseller" src="about:blank" border="0" width="0" height="0"></iframe>
+<iframe id="mid" name="mid" src="about:blank" border="0" width="0" height="0"></iframe>
+
+<iframe id="cload" name="cload" src="cload.html" border="0" width="0" height="0"></iframe>
+
+
+</body>
+</html>
+
+<!--
+Version tag, please don't remove
+$Revision: 40 $
+$Archive: /Autobuild/sf_730/ShopFactory_V6/Common Files/parseLang/extra.html $ -->
