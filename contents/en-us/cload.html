@@ -1,0 +1,56 @@
+<html >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex,follow">
+<script>
+var tf=parent.tf,LD=tf,d=document;
+var c='',parm=new Array(),isSecondCurrency=false;
+var q=unescape(d.location.search);
+if(q!=""){
+	q=q.substring(1,q.length);
+	var pairs=q.split('&');
+	for(var i=0;i<pairs.length;i++){
+		temp=pairs[i].split('=');
+		parm[unescape(temp[0])]=unescape(temp[1]);
+	}
+}
+
+if(!parm['currency'])parm['currency']=tf.shopCurrency.iso+','+tf.shopCurrency.abbrev+','+tf.shopCurrency.decimal_places;
+
+var selectedCurrency=parm['currency'].split(',');
+if(!tf.currencies[selectedCurrency[0]]){
+d.write('<script src="http://services.shopfactory.com/exchange_rates/v6.js"><'+'/script>');
+populateCurrencies();
+}else applyCurrencies();
+
+var count=0;
+function populateCurrencies(){if(c==''){if(count++>20){alert(LD.LD_COULDNT_GET_CURRENCY);return;}setTimeout("populateCurrencies()",500);return;}
+var currs=c.split(';');
+for(var i=0;i<currs.length;i++){
+var vals=currs[i].split(',');
+tf.currencies[vals[0]]=vals[1];
+}
+applyCurrencies();
+}
+
+function applyCurrencies(){
+tf.shopCurrency.multiplier=tf.currencies[tf.shopCurrency.iso];
+if (isSecondCurrency)
+tf.secondCurrency=new tf.currency(selectedCurrency[0],selectedCurrency[1],tf.currencies[selectedCurrency[0]], selectedCurrency[2]);
+else {
+tf.currentCurrency=new tf.currency(selectedCurrency[0],selectedCurrency[1],tf.currencies[selectedCurrency[0]], selectedCurrency[2]);
+tf.secondCurrency=tf.shopCurrency;
+}
+if(tf.secondCurrency&&tf.secondCurrency.iso==tf.currentCurrency.iso)tf.secondCurrency=null;
+
+}
+
+</script>
+</head>
+<body>
+</body>
+</html>
+<!--
+Version tag, please don't remove
+$Revision: 15 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/cload.html $ -->
