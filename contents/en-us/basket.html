@@ -1,0 +1,836 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:sf lang="en-us" dir="LTR" >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Shopping Basket </title>
+
+<meta name="description" content="Payment methods" />
+<meta http-equiv="expires" content="0" />
+<meta name="generator" content="ShopFactory 7 www.shopfactory.com" />
+<meta name="author" content="Prima Pearls">
+
+
+
+<script type="text/javascript">
+<!--
+try{var tf=parent&&typeof(parent.tf)!='unknown'&&parent.tf&&parent.name!='content'?parent.tf:this;}catch(e){var tf=this;}
+var content=tf,s;
+function isInSF(){return (typeof(window.external)!='undefined'&&window.external&&typeof(window.external.isInSF)!='undefined'?true:false);}
+
+var nametag={
+	get:function(t){if(t!='sig'&&!this.valid('sig'))return'';if(tf.name.indexOf('<'+t+'>')!=-1)return tf.name.replace(new RegExp('.*<'+t+'>(.*?)</'+t+'>.*'),'$1');else return '';},
+	add:function(t,v){if(this.valid('sig'))this.del(t);tf.name+=('<'+t+'>'+v+'</'+t+'>');},
+	del:function(t){var re=new RegExp('<'+t+'>.*?</'+t+'>');tf.name=tf.name.replace(re,'');},
+	valid:function(t){if(typeof(tf.wssig)!='undefined'&&this.get('sig')==''){tf.name+='<'+t+'>'+tf.wssig+'</'+t+'>';return true;}return(this.get('sig')==tf.wssig);}
+};
+
+if(!isInSF()){
+	var hrefpart='',qs=[],lh=location.href,ls=location.search,target=lh.replace(/([^\?]*\/)?(.*?)/,'$2').replace(/[\?#].*$/,'');
+	if(tf==this){
+		var hasls=ls.length>0,isCtnts=lh.indexOf('/contents/')!=-1;
+		var doThis=hasls||isCtnts;
+		
+		if(doThis){
+			hrefpart='../../index1.html';
+			if(isCtnts)qs.push('target='+target);
+			if(hasls)qs.push(ls.substr(1));
+			nametag.add('sfqs',qs.join('&')+location.hash);
+			s=hrefpart;
+		}
+	}
+	if(hrefpart)location.replace(s);
+}
+if(tf==this)tf.load=function(){};
+// -->
+</script>
+
+
+<style type="text/css">
+@import "../styles/website.css";
+
+@import "../styles/pa_paah_2.css";
+
+
+@import "../styles/index1.css";
+@import "../styles/index2.css";
+@import "../styles/global.css";
+</style>
+
+
+<script type="text/javascript">
+<!--
+
+var d=document;function dw(s){d.write(s);}function gl(s){return d.getElementById(s);}
+function isInSF(){return (typeof(window.external)!='undefined'&&window.external&&typeof(window.external.isInSF)!='undefined'?true:false);}
+function ldjs(f){dw('<sc'+'ript src="'+f+'"><\/sc'+'ript>');}
+if(isInSF()){var tf=this;ldjs('../sf.js');var lmd=[];ldjs('../date.js');ldjs('../lang_en-us.js');ldjs('../../shared_files/menu_scroller.js');}
+else{try{var tf=parent&&typeof(parent.tf)!='unknown'&&parent.tf&&parent.name!='content'?parent.tf:this}catch(e){var tf=this;}var core=tf.core,LD=tf;
+//<!--BEGIN_C78E91C8-61BA-447e-B459-F6FE529C7724-->
+var LMD='39404.861111';
+//<!--END_C78E91C8-61BA-447e-B459-F6FE529C7724-->
+}
+
+function addOnload(f){var e='onload';if(window[e] instanceof Function){var h=window[e];window[e]=function(p){h(p);f();};}else{window[e]=f;}}
+
+function ld(name,sf,args){var s;if(LD)s=eval('LD.'+name);if(!LD||!s)s=(sf)?sf:'';if(args){var sa=s.split('%%');s='';for(var i=0;i<sa.length;i++)if(args[i])s+=sa[i]+args[i];else s+=sa[i];}return s.replace('%%','');}
+
+var specialLoading=false;
+
+// -->
+</script>
+
+
+
+<script type="text/javascript">
+<!--
+
+var aMS=[],aMM=[];
+
+function sfMM2(a){aMM[aMM.length]=a;}
+function imgs2(){var tfu=tf.utils;if(tfu&&tfu.imgs)tfu.imgs();else setTimeout('imgs2()',50)};
+addOnload(imgs2);
+
+
+tf.load('lang.html','lang');
+function linkTo(s){if(!core)setTimeout('linkTo("'+s+'")',100);else{var f=core.getParentPage(s.toUpperCase());if(f)location=(location.href.indexOf('/'+f)==-1?tf.wm.url(f,'-',true):'')+'#'+s.toLowerCase();}}if(location.hash)linkTo(location.hash.substr(1));
+
+var hasProducts=true;
+
+
+
+
+
+
+var isBasketPage=true;
+if(!tf.coreLoaded){tf.load('core.html','core');location.replace(location.href);}
+tf.load('conf.html','conf',true); // try loading these in case not loaded yet
+tf.load('grey.html','shipping');
+
+	function mmove(s,c){
+		if(!c)c='rowover';
+		if(s.className!=c){s.oldcn=s.className;s.className=c}else s.className=s.oldcn
+	}
+	function dwH(n,o){dw(o?"<input name='"+n+"' type=hidden value='":'</input>')}
+	function chop(f) {
+	if (!f) return '';
+	var res=f.value.replace('LD.LD_TITLE',ld('LD_TITLE',''));
+	res=res.replace('LD.LD_PRICE',ld('LD_PRICE',''));
+	res=res.replace('LD.LD_QUANTITY',ld('LD_QUANTITY',''));
+	res=res.replace('LD.LD_TOTAL',ld('LD_TOTAL',''));
+	res=res.replace('LD.LD_SUBTOTAL',ld('LD_SUBTOTAL',''));
+	res=res.replace('LD.LD_DELETE',ld('LD_DELETE',''));
+	res=res.replace('LD.LDTOTALSHIPPING',ld('LD_TOTAL_SHIPPING',''));
+	res=res.replace('LD.LD_CHECKOUT',ld('LD_CHECKOUT',''));
+	res=res.replace('LD.LD_OK',ld('LD_OK',''));
+	res=res.replace('LD.LD_EMAIL_FRIEND',ld('LD_EMAIL_FRIEND',''));
+	res=res.replace('LD.LD_ADD',ld('LD_ADD', ''));
+	res=res.replace('LD.LD_CONTINUE_SHOPPING',ld('LD_CONTINUE_SHOPPING', ''));
+	res=res.replace('LD.LD_REMEMBER_CART',ld('LD_REMEMBER_CART', ''));
+	res=res.replace('LD.LD_SHOW_BASKET',ld('LD_SHOW_BASKET', ''));
+	res=res.replace('LD.LD_PRODUCTS',ld('LD_PRODUCTS', ''));
+	res=res.replace('LD.LD_DISCOUNTED_TO',ld('LD_DISCOUNTED_TO', ''));
+	res=res.replace('LD.LD_FREE',ld('LD_FREE', ''));
+	
+	return res.replace('<!'+'--','');}
+	function rpl(s,t,v,g,p) {
+		if (!v) v='';
+		var i=s.indexOf('<'+t+'>');if(i==-1)return s;
+		var j=s.indexOf('</'+t+'>',i);if(j==-1)j=s.length;
+		if (v&&p) {
+			ss=s.substring(i,j).split(' ');
+			for(k in ss)if(ss[k].indexOf(p)!=-1)ss[k]=p+v;
+			v=ss.join(' ');
+		}
+		s=s.substring(0,i)+v+s.substring(j,s.length);if(g)rpl(s,t,v,g);
+		return s;
+	}
+
+var bsk=!isInSF()?(core?core.Basket:null):null;
+
+function chgQnty(id){
+	var qnty = parseFloat(core.nfmt.fromLoc(eval('d.basket._'+id+'.value')));
+	bsk.updQnty(id, qnty);location=location.href.replace(/\?.*/,'');
+}
+
+function rmv(id){bsk.del(parseInt(id));location=location.href.replace(/\?.*/,'');}
+
+function go(idx){
+	var itm = bsk.items.get(idx);
+	if (itm=='') return;
+	location.href=tf.wm.jfile(unescape(itm.purl).replace('#'+itm.id.toLowerCase(),''))+'#'+itm.id;
+}
+
+function list_items(dfb) {
+	core=tf.core;
+	var hd=bsk.hasDisc();
+	function sp(val,type,del) {return core.showPrc(val,type,del)}
+
+	function rw(s,i,t,p,q,d,st,itm,d2,st2) {
+		if(d2||st2){
+			d2=d2*q;
+			var exT=bsk.tax.exTax(itm.taxes,d2);
+			if(st2==exT&&d2>exT){
+				if(p)p=LD.LD_INC_TOTAL_TAX+' '+p;
+				if(d)d=LD.LD_INC_TOTAL_TAX+' '+d;
+			}
+		}
+		s=rpl(s,'T_',t);
+		s=rpl(s,'P_',p);
+		s=rpl(s,'D_',d);
+		s=rpl(s,'S_',st);
+		s=rpl(s,'Q_',core.nfmt.toLoc(q));
+		s=rpl(s,'I_',(itm&&itm.pimg)?(itm.pimg.indexOf('..')==-1)?'"'+tf.wm.url(itm.pimg)+'"':'"'+itm.pimg+'"':'',null,'src=');
+		s=s.replace(/\[IDX\]/g, i);
+		s=s.replace(/VALUE="1"/i,'VALUE="'+core.nfmt.toLoc(q)+'"');
+		return s;
+	}
+	dw(chop(dfb.ckout1));
+	var tb=chop(dfb.tbl),hs=chop(dfb.header);
+	var r1=chop(dfb.row1),r2=chop(dfb.row2);
+	var fr1=chop(dfb.frow1),fr2=chop(dfb.frow2);
+	var o1=chop(dfb.opt1),o2=chop(dfb.opt2);
+
+	dw(tb+rpl(hs,'D_',hd?LD.LD_DISCOUNTED_TO:''));
+	
+
+	var itm=bsk.items.start();
+	var cnt=0;
+	while (itm!=null) {
+		var dscRaw=itm.calc('sdc'),dsc=hd?sp(dscRaw,1):'';
+		var prc=(itm.price!=0?sp(itm.price,1):'');
+		var stlRaw=itm.calc(),stl=(stlRaw!=0?sp(stlRaw,0,'<br>'):'');
+		dw(rw(cnt%2?r2:r1,cnt,itm.title,prc,itm.quantity,dsc,stl,itm,dscRaw,stlRaw));
+		var opt=itm.options.start();
+		while (opt!=null) {
+			if (opt.choice()!='') {
+				oprc=(opt.price()>0.001||opt.price()<-0.001)?sp(opt.price(),1):'';
+				otit=' + '+opt.choice();
+				dw(rw(cnt%2?o2:o1,1,otit,oprc));
+			}
+			opt=itm.options.next();
+		}
+
+		var idtag=itm.id;
+		if (isNaN(idtag)) idtag='_'+idtag;
+		var it=new core.Iterator(bsk.fbsk.items);
+		var i=it.start();
+		while(i!=null) {
+			if (i.idtag.split("|")[0]==idtag) {
+				dw(rw(cnt%2?fr2:fr1,cnt,i.title,'free',i.quantity,'','',i));
+			}
+			i=it.next();
+		}
+
+		itm=bsk.items.next();
+		cnt++;
+
+	}
+
+	var it=new core.Iterator(bsk.fbsk.items);var i=it.start();
+	while(i!=null) {
+		if (i.idtag.split("|")[0]=='_shop') {
+			dw(rw(cnt%2?fr2:fr1,cnt,i.title,'free',i.quantity,'','',i));
+		}
+		i=it.next();
+	}
+
+	var ts=bsk.shipPrice(tf.ship_obj);
+	var prods=bsk.total('orig');
+	var prods_dsc=prods;
+	var sd=bsk.shDisc();
+	if(sd)prods_dsc=prods-sd.purchasePrice(prods);
+	var tl=prods_dsc+ts;
+	if (prods_dsc<prods||ts) {
+		dw(rpl(chop(dfb.prods),'TL',sp(prods)));
+		if(prods_dsc<prods)dw(rpl(chop(dfb.prods_dsc),'TLD',sp(prods_dsc)));
+		if (ts) dw(rpl(chop(dfb.shp),'TS',sp(ts)));
+	}
+	dw(rpl(chop(dfb.ttl),'TL',sp(tl)));
+	dw(chop(dfb.chkbx));
+	dw(chop(dfb.ckout2));
+
+	dfb.showbasket.checked=(core.getCookStr('showbasket')!='0');
+	dfb.storebasket.checked=(core.getCookStr('storebasket')=='1');
+	return '';
+}
+
+function checkOut(form){saveStatus(form);location=tf.wm.url('ordertotal.html',tf.lmd['ordertotal'],1);}
+function contShop(form){saveStatus(form);if(tf.lastpage)location.href=tf.wm.url(tf.lastpage,'-',1); else history.go(-1); return false;}
+function saveStoreBasket(form) {
+	if (form.storebasket.checked&&!confirm(ld('LD_REMEMBER_BASKET_CONFIRMATION',''))) {
+		form.storebasket.checked=false;
+		return false;
+	}
+	saveStatus(form);
+	return true;
+}
+
+function saveStatus(form){if(form){
+	core.savCookStr("storebasket", (form.storebasket.checked)?1:0,-1);
+	if (!form.storebasket.checked) core.savCookStr("ADDRESS",'',0);
+	else core.Basket.save();
+	core.savCookStr("showbasket", (form.showbasket.checked)?1:0,-1);
+	}
+}
+
+
+
+
+
+
+
+
+// -->
+</script>
+</head>
+<body sf:object="LayoutMaster" class="GC41">
+
+
+
+
+
+<script>if(!isInSF()&&tf.mfh){tf.mfh('WebSiteContent',0,0);dw('<style>html{overflow:hidden;}#Content{overflow-y:auto;}</style>');}</script>
+
+<div id="WebSite" class="GC38">
+
+	<div id="WebSiteHeader" class="GC39">
+
+  
+	
+
+
+
+
+
+
+
+	<div id="CompanyImageAndSiteHeading">
+	
+	
+	</div>
+
+
+		<!-- BEGIN: SiteSlogan -->
+		
+
+
+		<!-- END: SiteSlogan -->
+
+		
+<div style="width:980;height:88;;" id="DesignImage1" align="middle">
+<object id="DSObject_DesignImage1" sf:object="LayoutObject" classid="CLSID:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="980" height="88"><param name="movie" value="../media/LIN-980-header.swf"><param name="flashvars" value="xmlfile=../media/LIN-980-header.xml"><param name="WMode" value="transparent"><param name="menu" value="false">
+<embed src="../media/LIN-980-header.swf" wmode="transparent" menu="false" width="980" height="88" name="DesignImage1" align="middle" type="application/x-shockwave-flash" flashvars="xmlfile=../media/LIN-980-header.xml"></embed>
+</object>
+</div>
+
+
+
+		
+
+
+<div sf:object="Index1" id="Index1" class="GC2">
+
+
+
+			
+
+
+
+
+
+
+
+<span id="index1holder"><script type="text/javascript">tf.load('load_index1.html','index1holder',true);</script></span>
+
+
+
+
+<script>aMS[aMS.length]=['idx1Navigation',parseInt('976'),parseInt(''),true];</script>
+
+
+
+
+		</div>
+
+
+	</div>
+
+  <div id="SelectBar" class="GC43">
+	 <!-- BEGIN: MiniCart -->
+	 
+
+<div sf:object="MiniCart" id="MiniCart">
+
+    
+
+
+<span id="minicartholder"><script type="text/javascript">tf.load('load_minicart.html','minicartholder',false);</script></span>
+<script>if(tf.core&&tf.core.Basket)tf.core.Basket.refreshTotal();</script>
+	 </div>
+
+	 <!-- END: MiniCart -->
+  	<!-- BEGIN: Search -->
+	  
+
+	  
+	  <!-- END: Search -->
+	  <!-- BEGIN: SwitchLang -->
+	  
+
+	  <!-- END: SwitchLang -->
+  </div>
+
+	<div id="WebSiteContent" class="GC1">
+
+		<div id="SideBar_L" class="GC32 EqualHeight">
+      <div id="Container1" class="GC45">
+			 <!-- BEGIN: SwitchCurrency -->
+			 
+
+<div sf:object="SwitchCurrency" id="SwitchCurrency">
+
+			 	
+
+
+<span id="switchcurrencyholder"><script type="text/javascript">tf.load('load_switchcurrency.html','switchcurrencyholder',false);</script></span>
+
+			 </div>
+
+			 <!-- END: SwitchCurrency -->
+			 <!-- BEGIN: Login -->
+     	 
+
+	     <!-- END: Login -->
+      </div>
+			
+
+
+<div sf:object="Index2" id="Index2" class="GC3">
+
+
+
+				
+
+
+
+
+
+
+
+<span id="index2holder"><script type="text/javascript">tf.load('load_index2.html','index2holder',true);</script></span>
+
+
+
+
+<script>aMS[aMS.length]=['idx2Navigation',parseInt('height'),parseInt(''),true];</script>
+
+
+
+
+			</div>
+
+
+		</div>
+
+		<a name="contentBookmark"></a>
+
+
+<div sf:object="Content" id="Content" class="GC22 ContentBody EqualHeight">
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Breadcrumbs -->
+
+<div class="GC6 Breadcrumbs" sf:object="Breadcrumbs" ID="Breadcrumbs-D-6">
+ 
+	
+
+  
+  <nobr><a href="front.html" title="Home ">
+  <span>Home </span></a></nobr>
+ 
+	
+
+</div>
+
+
+
+<style>.ProductLoop{margin-top:10px ! important;}</style>
+
+
+
+
+
+
+<!-- START OF PAGE LINK BOX  CONTAINER -->
+  
+
+
+
+
+
+
+
+<div id="PageContainer1">
+
+
+
+
+	
+	<div class="PageImage">
+	<table cellspacing="0" cellpadding="0" border="0" width="1" >
+		<tr>
+		<td>
+			<div sf:object="PageImage" ID="PageImage-D-6"><img width="330" height="350" src="../media/l_jade&#32;and&#32;turquoise&#32;necklace.jpg" id="ID-6" name="ID-6" border="0" alt="jade and turquoise necklace" title="jade and turquoise necklace" hspace="0" vspace="0" align="" onmouseover="window.status='jade and turquoise necklace';return true;" onmouseout="window.status='';return true"></div>
+		</td>
+		</tr>
+		<tr>
+		
+ 
+  <td class=GC8 PageImageCaption valign=middle align=left>
+ 
+ 
+		
+		
+ 
+  </td>
+ 
+ 
+		</tr>
+	</table></div>
+	
+
+	<div class="GC17 PageTitle" sf:object="PageTitle" ID="PageTitle-D-6">Basket</div>
+  
+	<div class="GC18 PageIntroduction" sf:object="PageIntroduction" ID="PageIntroduction-D-6">Payment methods</div>
+
+
+	<div class="GC19 PageDescription" sf:object="PageDescription" ID="PageDescription-D-6"><P>We accept payments using PayPal. You don't need to have a Paypal Account you can simply enter your credit or debit card details on a Secure Payments Site and they will carry out the transaction for you. There is no charge for this service.</P>
+<P>To make sure your payment is handled securely once you click on Make a Payment a fresh Paypal Payment window will open. If you have a PopUp Blocker on your computer&nbsp;you will need to <U>temporarily allow Pop Ups</U> for the PayPal payment site to appear.</P></div>
+
+<!-- END OF PAGE LINK BOX TITLE CONTAINER -->
+
+
+
+
+
+ 
+<script>var nvSubArrIdx=-1;</script>
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+		<center><script>
+if (bsk&&bsk.items.cnt()>0){
+var total=bsk.total('orig');
+var sdisc=bsk.shDisc();
+var range=sdisc.getNextRange(total);
+if (typeof(range)=='object'&&(sdisc.type=='6'||sdisc.type=='103')) {
+	var nmin=parseFloat(range.min);
+	var perc=sdisc.getData(nmin)
+	if (perc) {
+		switch (sdisc.type.toString()) {
+			case '6':
+			if (perc>0) dw(ld('LD_SPEND_AND_GET_DISCOUNT','',[core.showPrc(nmin),perc+'%']));
+			break;
+			case '103':
+				dw(ld('LD_SPEND_AND_GET_FREE','',[core.showPrc(nmin),bsk.fbsk.getTitles(sdisc.getData(nmin))]));
+
+			break;
+		}
+	}
+}}
+
+			</script>
+			<form name="basket">
+			<script>try{dwH('tbl',1);}catch(e){location.reload();}</script>
+			<table cellspacing=0 cellpadding=3 border="0" sf:object="ViewbasketMaster" class="ViewbasketMaster" width="90%" align="center">
+				<!-- ' -->
+				<script>dwH();dwH('header',1)</script>
+				<tr sf:object="ViewbasketHeader" class="GC4 ViewbasketHeader">
+					<td colspan="2" class="GC5 ViewbasketHeader">LD.LD_TITLE</td>
+					<td class="GC5 ViewbasketHeader">LD.LD_PRICE</td>
+					<td class="GC5 ViewbasketHeader">LD.LD_QUANTITY</td>
+					<td class="GC5 ViewbasketHeader"><D_></D_><img src="../media/trans.gif" height="1" width="1"></td>
+					<td class="GC5 ViewbasketHeader">LD.LD_SUBTOTAL</td>
+					<td class="GC5 ViewbasketHeader"><img src="../media/trans.gif" height="1" width="1"></td>
+				</tr>
+
+				<!-- ' -->
+				<script>dwH();dwH('row1',1)</script>
+				<tr sf:object="ViewbasketRow1" class="GC14 ViewbasketRow1">
+					<td><I_><img width=45 height=45 src="../media/sample.gif"></I_>&nbsp;</td>
+					<td align=left><a href=javascript:go("[IDX]")><T_>ShopFactory</T_></a></td>
+					<td align=right><nobr><P_>$ 379.00</P_></nobr></td>
+					<td align=right><nobr>
+						<input size="4" name="_[IDX]" value="1" class="GC26 TextInput" sf:object="TextInput">
+						<input type="button" value="LD.LD_OK" onClick=chgQnty([IDX]) sf:object="Button" class="GC25 Button">
+					</nobr></td>
+					<td align=right><D_></D_>&nbsp;</td>
+					<td align=right><nobr><S_>$ 379.00</S_></nobr></td>
+					<td align=right>[<a href=javascript:rmv("[IDX]")>LD.LD_DELETE</a>]</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('frow1',1)</script>
+				<tr sf:object="ViewbasketRow1" class="GC14 ViewbasketRow1">
+					<td><I_><img width=25 height=25 src="../media/sample.gif"></I_>&nbsp;</td>
+					<td align=left><T_>ShopFactory</T_></td>
+					<td align=right>LD.LD_FREE&nbsp;</td>
+					<td><Q_>1</Q_>&nbsp;</td>
+					<td colspan=3>&nbsp;</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('opt1',1)</script>
+				<tr sf:object="ViewbasketRow1" class="GC14 ViewbasketRow1">
+					<td>&nbsp;</td>
+					<td align=left><T_> + Extra Option</T_></td>
+					<td align=right><nobr><P_> $ 0.00</P_></nobr></td>
+					<td colspan="4" >&nbsp;</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('row2',1)</script>
+				<tr sf:object="ViewbasketRow2" class="GC15 ViewbasketRow2">
+					<td class="Visibility"><I_><img width=45 height=45 src="../media/sample.gif"></I_>&nbsp;</td>
+					<td align=left><a href=javascript:go("[IDX]")><T_>ShopFactory</T_></a></td>
+					<td align=right><nobr><P_>$ 379.00</P_></nobr></td>
+					<td align=right><nobr>
+						<input size="4" name="_[IDX]" value="1" class="GC26 TextInput" sf:object="TextInput">
+						<input type="button" value="LD.LD_OK" onClick=chgQnty([IDX]) sf:object="Button" class="GC25 Button">
+					</nobr></td>
+					<td align=right><D_></D_>&nbsp;</td>
+					<td align=right><nobr><S_>$ 389.95</S_></nobr></td>
+					<td align=right>[<a href=javascript:rmv("[IDX]")>LD.LD_DELETE</a>]</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('frow2',1)</script>
+				<tr sf:object="ViewbasketRow2" class="GC15 ViewbasketRow2">
+					<td><I_><img width=25 height=25 src="../media/sample.gif"></I_>&nbsp;</td>
+					<td align=left><T_>ShopFactory</T_></td>
+					<td align=right>LD.LD_FREE</td>
+					<td><Q_>1</Q_></td>
+					<td colspan=3>&nbsp;</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('opt2',1)</script>
+				<tr sf:object="ViewbasketRow2" class="GC15 ViewbasketRow2">
+					<td>&nbsp;</td>
+					<td align=left><T_> + Extra Option</T_></td>
+					<td align=right><nobr><P_> $ 0.00</P_></nobr></td>
+					<td colspan="4" >&nbsp;</td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('prods',1)</script>
+				<tr sf:object="ViewbasketExtras" class="GC16 ViewbasketExtras">
+					<td colspan=6 align=right>LD.LD_PRODUCTS:</td>
+					<td align=right><nobr><TL>$ 768.95</TL></nobr></td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('prods_dsc',1)</script>
+				<tr sf:object="ViewbasketExtras" class="GC16 ViewbasketExtras">
+					<td colspan=6 align=right>LD.LD_DISCOUNTED_TO:</td>
+					<td align=right><nobr><TLD>$ 730.50</TLD></nobr></td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('shp',1)</script>
+				<tr sf:object="ViewbasketExtras" class="GC16 ViewbasketExtras">
+					<td colspan=6 align=right>LD.LDTOTALSHIPPING:</td>
+					<td align=right><nobr><TS>$ 5.00</TS></nobr></td>
+				</tr>
+				<!-- ' -->
+				<script>dwH();dwH('ttl',1)</script>
+				<tr sf:object="ViewbasketExtras" class="GC16 ViewbasketExtras">
+					<td colspan=6 align=right>LD.LD_TOTAL:</td>
+					<td align=right><nobr><TL>$ 735.50</TL></nobr></td>
+				</tr>
+
+				<tr >
+					<td colspan=10 align=left><img src="../media/trans.gif" height="1" width="1"></td>
+				</tr>
+							<!-- ' -->
+				<script>dwH();dwH('chkbx',1)</script>
+				
+				<tr sf:object="ViewbasketCkBox" class="ViewbasketCkBox">
+					<td colspan=10 align=left><input name=storebasket type=checkbox onclick="saveStoreBasket(this.form)"><span onclick="d.basket.storebasket.checked=!d.basket.storebasket.checked; saveStoreBasket(d.basket);">LD.LD_REMEMBER_CART</span></td>
+				</tr>
+				
+				<tr sf:object="ViewbasketCkBox" class="ViewbasketCkBox">
+					<td colspan=10 align=left><input name=showbasket type=checkbox onclick="saveStatus(this.form)"><span onclick="d.basket.showbasket.checked=!d.basket.showbasket.checked; saveStatus(d.basket)">LD.LD_SHOW_BASKET</span></td>
+				</tr>
+				</table>
+				<!-- ' -->
+				<script>dwH();dwH('ckout2',1)</script>
+				<DIV sf:object="ViewbasketCheckOut" class="ViewbasketCheckOut">
+				<INPUT TYPE=BUTTON VALUE="LD.LD_CONTINUE_SHOPPING" onClick="contShop(this.form)" sf:object="Button" class="GC25 Button">&nbsp;&nbsp;<INPUT TYPE=BUTTON VALUE="LD.LD_CHECKOUT" onClick="checkOut(this.form)" class="GC25 Button" >
+				</DIV>
+				<!-- ' -->
+				<script>dwH();dwH('ckout1',1)</script>
+				<div class="ProductCopyClear"><span>!</span></div>
+				<DIV sf:object="ViewbasketCheckOut" class="ViewbasketCheckOut" id=1>
+				<INPUT TYPE=BUTTON VALUE="LD.LD_CONTINUE_SHOPPING" onClick="contShop(this.form)" sf:object="Button" class="GC25 Button">&nbsp;&nbsp;<INPUT TYPE=BUTTON VALUE="LD.LD_CHECKOUT" onClick="checkOut(this.form)" sf:object="Button" class="GC25 Button">
+				</DIV>
+				<!-- ' -->
+				<script>dwH()</script>
+				<script>
+				var dfb=d.basket;
+				if(bsk){
+					var css=core.css;
+					if(css)css.init(d);
+					if(bsk.items.cnt()==0)dw(LD.LD_NO_ITEMS_IN_BASKET);
+					else list_items(d.basket);
+					core.rl_total();
+				} else if (dfb) {
+				dw(chop(dfb.ckout1));
+				dw(chop(dfb.tbl));
+				dw(chop(dfb.header));
+				
+				dw(chop(dfb.row1));
+				dw(chop(dfb.opt1));
+				dw(chop(dfb.row2));
+				dw(chop(dfb.opt2));
+				dw(chop(dfb.shp));
+				dw(chop(dfb.ttl));
+				dw(chop(dfb.chkbx));
+				dw(chop(dfb.ckout2));
+				}
+				
+				</script>
+
+			</form>
+		</center>
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+Version tag, please don't remove
+$Revision: 19 $
+$Archive: /ShopFactory_V6/Templates/ProductLoops/PRAA_2/productloop.html $ -->
+
+
+
+
+
+
+
+ <div class="GC1 PageFooter" sf:object="PageFooter" ID="PageFooter-D-6">
+ 	
+	
+  </div> <!-- end PageFooter -->
+
+
+
+	<div style="height:5px;"><img src="../media/trans.gif" width="1" height="1" border="0"></div>
+	
+ </div> <!--  end PageContainer1 -->
+<div id="AutoSplitPageBottom"></div>
+<!--
+Version tag, please don't remove
+$Revision: 23 $
+$Archive: /ShopFactory_V6/Templates/Pages/PAAH_2/page.html $ -->
+
+
+
+		</div>
+
+
+		<div id="FooterClearance"><span>!</span></div>
+
+	</div>
+
+	<div id="WebSiteFooter" class="GC40">
+		
+
+
+<div sf:object="LayoutObject" class="LayoutObject" id="AppLogo"><a href="http://www.shopfactory.com/" target="_blank" title="Shopping cart software by ShopFactory powers the e-commerce solution for Basket"><img id=SF src="../media/shopfactory_powered.png" border="0" title="Shopping cart software by ShopFactory powers the e-commerce solution for Basket" alt="Shopping cart software by ShopFactory powers the e-commerce solution for Basket"></a></div>
+
+
+
+	</div>
+
+</div>
+
+
+</body>
+<script type="text/javascript">
+
+tf.load('core.html','core');
+
+
+
+
+
+
+function acs(){return function(){try{tf.extra.forceAllLang=false;tf.parent.applyColorScheme(window);}catch(e){};}}addOnload(acs());
+</script>
+
+</html>
+<!--$Revision: 4 $
+$Archive: /ShopFactory_V6/Templates/Website/LIN-AA_1024 x #/parseLang/website.html $ -->
+

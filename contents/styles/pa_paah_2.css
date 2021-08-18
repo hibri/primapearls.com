@@ -1,0 +1,58 @@
+/* ################################ */
+/*	   Redefine HTML tags		 */
+/* ################################ */
+.SubPageNavigation { margin:0px; font-size:8pt;	padding:2px;	padding-left:5px; }
+.Breadcrumbs { margin:0px; font-size:10px; padding:2px;	padding-left:5px;	border-style:solid;	border-width:1px; border-left:0px; border-right:0px; border-top:0px; }
+#PageContainer1 { float:left; }
+
+.PageHeader {	padding:0px; margin-bottom:5px; }
+
+.PageImage { margin:10px 10px 10px 10px; float:right; padding-top:0px; padding-left:10px; padding-bottom:0px; padding-right: 0px; border-top:0px; border-left:1px solid; border-bottom:0px; border-right:0px; }
+  *html .PageImage { margin:10px 5px 10px 10px; } /* IE Support */
+.PageImageCaption { text-align:right; padding:0 3px; }
+
+.PageTitle { margin:10px 10px 0 10px; font-size:16px; font-weight:bolder; line-height:150%; }
+.PageIntroduction { font-weight:bold; margin:10px 10px 0 10px; line-height:150%; }
+.PageIntroduction a {text-decoration:underline;}
+.PageDescription { margin:10px; line-height:150%;}
+.PageDescription a {text-decoration:underline;}
+
+.PageIntroduction p {margin-top:.25em;margin-bottom:.5em;}
+.PageDescription p {margin-top:.25em;margin-bottom:.5em;}
+
+.PageLinkBox td { border:0px; }
+.PageLinkBox { float:right; width:24%; border-width:1px; font-size:11px; margin:10px 10px 10px 0; }
+  *html .PageLinkBox { margin:10px 5px 10px 0; } /* IE Support */
+a.PageLinkBoxImage{background-color:transparent;border:none}
+.PageLinkBoxImage {	position:relative; display:block; text-align:center; padding:1px; }
+.PageLinkBoxTitle a { background-color:transparent; border:none; }
+.PageLinkBoxTitle { font-weight:bold; line-height:120%; padding:2px; }
+.PageLinkBoxDescription a { background-color:transparent; border:none; }
+.PageLinkBoxDescription { position:relative; background-color:transparent; padding:3px 3px 8px 3px; line-height:130%; }
+.PageLinkBox .ProductMoreDetails { text-align:right; padding:2px; background-color:transparent; }
+
+#PageContainer3{position:relative;clear:right;}
+
+.LayoutObject#GroupProductComponents1 {	float:right; border:0px; padding:5px; }
+.GC1#Footer { border-top:2px solid; margin:0px; padding:0px; background-color:transparent; padding-bottom:2px; }
+.ShopDiscountMessage { margin:10px 10px 0 10px; padding:0px; font-size:11px; font-weight:bold; }
+.PageFooter { background-color:transparent; border-width:0px; margin:10px; }
+.GC1#ThinLine { border-width:0px; }
+
+#AutoSplitPageBottom {clear:left;}
+.Product { clear:both; }
+
+#PageContactUsContainer{float:right;max-width:320px;min-width:250px;padding:10px 10px 10px 10px;}
+*html #PageContactUsContainer{width:50%;} /* IE6 support */
+.Addressformat {text-align:left;font-size:11px; line-height:130%;width:100%;overflow-x:auto;}
+.Addressformat ul,.Addressformat li {margin:0;padding:0;list-style:none;}
+.Addressformat ul {}
+.Addressformat li {padding:2px 8px 2px 8px;word-wrap:break-word;}
+.Addressformat li span {font-weight:bold;}
+.AddressformatTitle {font-weight:bold;border-bottom-width:1px;border-bottom-style:solid;}  
+
+/*
+Version tag, please don't remove
+$Revision: 14 $
+$Archive: /ShopFactory_V6/Templates/Pages/PAAH_2/stylesheet.css $
+*/

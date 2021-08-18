@@ -1,0 +1,27 @@
+/* ** BEGIN: Index2 ** */
+table.idx2Background {width:100%;border:0;}
+table.idx2Background td{padding:3px 3px;cursor:pointer;}
+td.idx2Left{width:15px;}
+td.idx2LeftMouseOver{width:15px;}
+td.idx2MouseOver a{display:block;overflow:hidden;clip:rect(0 0 0 0);background-color:transparent;text-decoration:none;}
+td.idx2 a{display:block;overflow:hidden;clip:rect(0 0 0 0);background-color:transparent;}
+td.idx2{padding-left:15px;}
+td.idx2MouseOver{padding-left:15px;}
+td.idx2MouseOver a {text-decoration:none;}
+td.idx2Right{width:15px;}
+td.idx2RightMouseOver{width:15px;}
+
+/* sublevels */
+table.idx2SubBackground td{cursor:pointer;}
+td.idx2Sub{width:100px;}
+td.idx2SubMouseOver{width:100px;}
+td.idx2SubMouseOver a{text-decoration:none;}
+/* ** END: Index2 ** */
+
+.SubClear{clear:both;height:1px;}
+.SubClear span{display:none;}
+.SubPageNavigationImageContainer{position:relative;display:inline;float:left;margin-right:5px;}
+.SubPageNavigationImage{margin-bottom:3px; }
+.SubPageNavigationTitle{position:relative;font-size:13px;font-weight:bold;margin-bottom:3px;}
+.SubPageNavigationIntroduction{position:relative;}
+.SubPageNavigationImageCaption{position:relative;}

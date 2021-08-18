@@ -1,0 +1,84 @@
+.Product {margin:0 10px 10px 10px;padding:0px;border-style:solid;border-width:1px;}
+
+.ProductContainerClear {clear:both;height:1px;}
+.ProductContainerClear span {display:none;}
+
+.ProductImageContainer {position:relative;float:right;margin:5px 5px 5px 10px;text-align:center;}
+ .ProductImage img {border:0;margin:0;}
+ .ProductImageCaptionIcons {height:18px;}
+ .ProductImageCaptionIcons div {display:inline;float:right;}
+ .ProductImageCaption {float:right;line-height:12px;font-size:10px;overflow:hidden;text-align:left;}
+ #ProductMoreDetailsIcon.LayoutObject {width:15px;height:15px;background-image:url(../media/MoreDetails.gif);background-repeat:no-repeat;background-position:center;}
+ #ProductMoreImagesIcon.LayoutObject {width:22px;height:18px;background-image:url(../media/gallery.png);background-repeat:no-repeat;background-position:center;}
+ .ProductImageCaptionIcon {width:22px;height:18px;background-image:url(../media/zoom.png);background-repeat:no-repeat;background-position:center;}
+
+.ProductTableHeader {padding:5px 5px 5px 5px;}
+ .ProductTitle {font-weight:bold;font-size:13px;background-color:transparent;}
+ /* catalog number */ .ProductNumber {background-image:none;background-color:transparent;text-align:left;font-weight:normal;font-size:12px;}
+
+.ProductInternationalCatalogNumber {position:relative;font-weight:normal;font-size:12px;margin:5px;}/* EAN */
+.ProductInternationalCatalogNumber .EAN {font-weight:bold;}
+
+.ProductIntroduction {border:0px;	margin:5px;text-align:left;padding:0px;font-size:13px;font-weight:bold;}
+
+.ProductDescription {background-color:transparent;border:0px;margin:5px;text-align:left;padding:0px;font-size:12px;}
+
+.ProductIntroduction p {margin-top:.25em;margin-bottom:.5em;}
+.ProductDescription p {margin-top:.25em;margin-bottom:.5em;}
+
+.ProductDetailedDescription {background-image:none;background-color:transparent;border:0px;margin:5px 5px 10px 5px;text-align:left;}
+
+.ShippingChargeForProduct {font-size:10px;text-align:right;background-color:transparent;}
+.ProductNumberBasePriceContainer {padding-top:2px;}
+ .ProductContainerClear {clear:both;height:1%;}
+ .ProductContainerClear span {display:none;}
+.ProductBasePrices {display:inline;float:right;padding:2px 5px 2px 5px;}
+ .ProductBasePrice {font-size:10px;font-weight:bold;text-align:right;line-height:100%;background-color:transparent;}
+ .ProductBasePrice nobr {font-weight:normal;background-color:transparent;}
+.ProductNumber {display:inline;float:left;padding:0px 5px 0px 5px;}
+.ProductWeightContainer {display:inline;line-height:100%;float:right;padding:2px 5px 2px 5px;font-size:10px;  }
+ .ProductWeight {background-image:none;border:0px;margin:0px;}
+ .ProductWeightText {font-weight:bold;}
+ .ProductWeightUnit {background-image:none;border:0px;margin:0px;}
+.ProductStockContainer {display:inline;float:right;padding:2px 5px 2px 5px;}
+ .ProductStock {font-size:10px;font-weight:normal;text-align:right;line-height:100%;background-color:transparent;}
+ .ProductStock span {font-weight:bold;background-color:transparent;}
+
+.ProductOptions {background-image:none;background-color:transparent;border:0px;margin:0px;text-align:left;margin-top:2px;margin-right:0;}
+ .ProductOptions select, .ProductOptions textarea {margin:5px 0 5px 0;}
+ .ProductOptionName {font-size:12px;font-weight:bold;padding-bottom:1px;border-bottom-width:1px;border-bottom-style:solid;background-color:transparent;}
+ .ProductChoiceName {position:relative;background-color:transparent;font-size:11px;margin:3px 0 3px 0;}
+ .ProductChoiceName input {position:absolute;z-index:10;background-color:transparent;}
+ .ProductChoiceName span {display:block;margin-left:24px;padding:3px 0 3px 0;border-bottom-width:1px;border-bottom-style:dotted;}
+
+.ProductFeatures {font-size:11px;margin:0;}
+ .ProductFeatures ul {margin:5px;padding:0;}
+ .ProductFeatures li {margin-bottom:5px;list-style-type:none;}
+ .ProductFeaturesTitle {font-weight:bold;}
+ .ProductFeaturesDescription {font-weight:normal;margin-left:3px;}
+
+.ProductPriceOriginal {vertical-align:top;font-size:10px;padding-right:2px;padding-left:2px;text-decoration:line-through;}
+.ProductDiscount {background-image:none;background-color:transparent;border:0px;margin:0px;text-align:left;margin:5px;margin-top:3px;}
+.ProductPrice {background-image:none;background-color:transparent;border:0px;margin-right:3px;text-align:left;font-weight:bold;font-size:13px;}
+.ProductPriceIntro {background-color:transparent;text-decoration:none;font-weight:normal;}
+.ProductPriceCalculated {font-style:normal;background-color:transparent;}
+.ProductCurrencySymbol {background-image:none;background-color:transparent;border:0px;margin:0px;text-align:left;}
+
+ .ProductDiscountMessage {background-image:none;background-color:transparent;margin:5px;text-align:left;font-size:12px;font-weight:bold;}
+ .ProductDeliveryAdvice {background-image:none;background-color:transparent;margin:5px;text-align:left;font-size:12px;font-weight:bold;}
+
+.ProductQuantityUnit {padding-left:2px;}
+.ProductQuantity input {background-image:none;font-size:12px;margin:0px;padding:0px;width:40px;height:20px;text-align:right;}
+
+.LayoutObject#GroupProductComponents1 {float:right;padding:0 0 10px 20px;width:auto;overflow:hidden;}
+.ProductOptions {  }
+.ProductOptions input {background-color:transparent;margin:0 0 0 3px;padding:0;}
+
+.ProductHighlight {background-color:transparent;}
+.Product .ProductMoreDetails {text-align:right;font-size:12px;padding:0 5px 5px 5px;}
+.Product a, .Product a:link {text-decoration:underline;}
+/*
+Version tag, please don't remove
+$Revision: 18 $
+$Archive: /ShopFactory_V6/Templates/ProductLoops/PRAA_2/stylesheet.css $
+*/

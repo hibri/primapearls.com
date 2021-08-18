@@ -1,0 +1,22 @@
+h1,h2,h3,font{line-height:normal;}
+.PageTitle,.ProductTableHeader,.ProductTitle,.ProductPriceIntro,.ProductNumber,.ProductOptionName,.ProductChoiceName,.ProductDeliveryAdvice,.WebsiteName,.Breadcrumbs{line-height:normal;}
+/* bullet points image left */
+.PageIntroduction ul, .PageDescription ul, .ProductIntroduction ul, .ProductDescription ul, .ProductDetailedDescription ul { clear:left; }
+.PageIntroduction ol, .PageDescription ol, .ProductIntroduction ol, .ProductDescription ol, .ProductDetailedDescription ol { clear:left; }
+td.idx1MouseOver a {background-color:transparent;}
+td.idx2MouseOver a {background-color:transparent;}
+td.idx1SubMouseOver a {background-color:transparent;}
+td.idx2SubMouseOver a {background-color:transparent;}
+td.idx1Sub a {background-color:transparent;}
+td.idx2Sub a {background-color:transparent;}
+/* fix clear items on product loops */
+.ProductCopyClear { clear:both; height:1px; }
+ .ProductCopyClear span { display:none; }
+.ViewbasketCheckOut {padding:10px;}
+input.Button, input.Radio, input.CheckBox { margin:0; padding:0; }
+
+/*
+Version tag, please don't remove
+$Revision: 11 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/global.css $
+*/
