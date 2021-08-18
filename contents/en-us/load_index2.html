@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+
+<html xmlns:sf lang="en-us" dir="LTR" >
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<script type="text/javascript">
+
+var d=document;function dw(s){d.write(s);}function gl(s){return d.getElementById(s);}
+function isInSF(){return (typeof(window.external)!='undefined'&&window.external&&typeof(window.external.isInSF)!='undefined'?true:false);}
+function ldjs(f){dw('<sc'+'ript src="'+f+'"><\/sc'+'ript>');}
+if(isInSF()){var tf=this;ldjs('../sf.js');ldjs('../lang_en-us.js');ldjs('../../shared_files/menu_scroller.js');}
+else{try{var tf=parent&&typeof(parent.tf)!='unknown'&&parent.tf&&parent.name!='content'?parent.tf:this}catch(e){var tf=this;}var core=tf.core,LD=tf;
+//<!--BEGIN_C78E91C8-61BA-447e-B459-F6FE529C7724-->
+var LMD='';
+//<!--END_C78E91C8-61BA-447e-B459-F6FE529C7724-->
+}
+
+function addOnload(f){var e='onload';if(window[e] instanceof Function){var h=window[e];window[e]=function(p){h(p);f();};}else{window[e]=f;}}
+
+function ld(name,sf,args){var s;if(LD)s=eval('LD.'+name);if(!LD||!s)s=(sf)?sf:'';if(args){var sa=s.split('%%');s='';for(var i=0;i<sa.length;i++)if(args[i])s+=sa[i]+args[i];else s+=sa[i];}return s.replace('%%','');}
+
+var specialLoading=false;
+
+</script>
+</head>
+
+<body class="GC2">
+
+	<script>if(tf.load)tf.load('utils.html','utils');</script>
+
+	<div id="idx2Navigation" style="visibility:hidden;">
+
+		
+		
+
+	<script>
+	
+	
+	
+	
+
+
+	
+	
+	var arr=[["D4","d4.html","Necklaces",'Necklaces'],["D5","d5.html","Bracelets",'Bracelets'],["D6","d6.html","Earrings",'Earrings'],["D7","d7.html","Sets",'Sets'],["D8","d8.html","Accessories",'Accessories'],["D9","d9.html","New!",'New!']];
+	
+	function nvTop(post,a){
+		var idx='idx2',gc='GC32',gcOvr='GC33';
+		return '<td class="'+gc+' '+idx+post+'" sf:object="'+idx+post+'"'+(typeof(a)!='undefined'?' id="'+idx+post+a[0]+'" onMouseOver="tf.utils.navOvr(this,\''+a[0]+'\',\''+gcOvr+'\')" onMouseOut="tf.utils.navOut(this,\''+a[0]+'\',\''+gc+'\')" onClick="tf.utils.navClk(this,\''+a[1]+'\',\''+a[0]+'\')" title="'+a[2]+'"':'')+'><a>'+(post?'':a[3]?a[3]:a[2])+'</a></td>';
+	}
+
+
+	var nvs='',len=arr.length;
+	nvs+='<table class="idx2Background" cellSpacing=0 cellPadding=0 border=0>';
+	
+	nvs+='<tr class="idx2Head">'+nvTop('HeadLeft')+nvTop('Head')+nvTop('HeadRight')+'</tr>';
+	for(var i=0;i<len;i++){nvs+='<tr class="idx2">'+nvTop('Left',arr[i])+nvTop('',arr[i])+nvTop('Right',arr[i])+'</tr>';}
+	nvs+='<tr class="idx2Foot">'+nvTop('FootLeft')+nvTop('Foot')+nvTop('FootRight')+'</tr>';
+	nvs+='</table>';
+	dw(nvs);
+
+
+	</script>
+
+
+
+
+	</div>
+
+</body>
+<script>if(parent!=self)parent.loadCallback(document,window.frameElement.id)</script>
+</html>
+
+<!--
+Version tag, please don't remove
+$Revision: 11 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/load_index2.html $ -->
