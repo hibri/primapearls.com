@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+<html xmlns:sf lang="en-us" dir="LTR" >
+	<head>
+		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+		<style type="text/css">
+		@import "styles/website.css";
+		@import "styles/global.css";
+		</style>
+
+		<script>
+		var tf=parent.tf,LD=tf,core=tf.core;
+		var wndOpener=tf.content,wndContainer=wndOpener.getAddDiv?wndOpener.getAddDiv():null;
+		if(!wndContainer||!wndOpener)location.replace("about:blank");
+
+		var d=document;function dw(s){d.writeln(s)}
+
+		onload=sfonload;
+		function sfonload(){self.focus();var thisWnd=new mywnd(self);wndContainer.style.visibility='visible';thisWnd.sizeToFit(loadingFrame);thisWnd.center();}
+		function ld(name,sf,args){var s;if(LD)s=eval('LD.'+name);if(!LD||!s)s=(sf)?sf:'';if(args){var sa=s.split('%%');s='';for(var i=0;i<sa.length;i++)if(args[i])s+=sa[i]+args[i];else s+=sa[i];}return s.replace('%%','');}
+
+		</script>
+	</head>
+<body sf:object="LayoutMaster" class="GC13 contentBody" scroll="no" style="border:0px;margin:0px;padding:0px;width:100%;overflow:hidden;">
+
+<table border=0 cellspacing=0 cellpadding=0 align=center width=100% id="loadingTable"><tr><td align=center valign=middle id="loadingFrame"><table border=0 cellspacing=0 cellpadding=0 height=100%><tr><td align=center valign=middle><br><script>dw(ld('LD_LOADING','Loading'))</script><div style="font-size:5pt;padding:2px;border:solid #CCCCCC 1px">
+<script>
+var prgEnd=30,prgColor='#999999',prgInterval=100,prgAt=prgEnd,prgTimer;
+for(var i=1;i<=prgEnd;i++)dw('<span style="padding:0px;width:1px" id="prg'+i+'">&nbsp;</span>');
+</script>
+</div><br></td></tr></table></td></tr></table>
+
+<script>
+var av=navigator.appVersion,isIE=d.all&&!window.opera,isIE5=(av.indexOf('MSIE 5')!=-1),isSafari=(av.indexOf('Safari')!=-1);isNS=(navigator.appName);
+var args=null,itm,st,bsk,disc,sdisk,stk;
+
+function getArgs(){if(wndOpener&&typeof(wndOpener.sfAddRef['core'])!='undefined'){args=wndOpener.sfAddRef;}else{setTimeout('getArgs()',100);}}
+getArgs();
+
+var loadingTable=d.getElementById('loadingTable'),loadingFrame=d.getElementById('loadingFrame');
+
+function mywnd(wnd){
+this.wnd=wnd;
+this.getWidth=function(){
+	var x=0,doc=this.wnd.document;
+	if(x==0&&typeof(this.wnd.innerWidth)!='undefined'){x=this.wnd.innerWidth;}
+	if(x==0&&typeof(this.wnd.clientWidth)!='undefined'){x=this.wnd.clientWidth;}
+	try{if(x==0&&typeof(doc.body)!='undefined'){x=doc.body.clientWidth;}}catch(e){}
+	if(x==0&&typeof(this.wnd.scrollWidth)!='undefined'){x=this.wnd.scrollWidth;}
+	return x;
+}
+this.getHeight=function(){
+	var y=0,doc=this.wnd.document;
+	if(y==0&&typeof(this.wnd.innerHeight)!='undefined'){y=this.wnd.innerHeight;}
+	if(y==0&&typeof(this.wnd.clientHeight)!='undefined'){y=this.wnd.clientHeight;}
+	try{if(y==0&&typeof(doc.body)!='undefined'){y=doc.body.clientHeight;}}catch(e){}
+	if(y==0&&typeof(this.wnd.scrollHeight)!='undefined'){y=this.wnd.scrollHeight;}
+	return y;
+}
+this.getScrollTop=function(){
+	var y=0,w=wndOpener;
+	if(w.pageYOffset){y=w.pageYOffset;}
+	else if(w.document.documentElement){y=w.document.documentElement.scrollTop;}
+	else{var bdy=w.document.body;if(bdy&&bdy.scrollTop){y=bdy.scrollTop;}}
+	return y;
+}
+this.getScrollLeft=function(){
+	var x=0,w=wndOpener;
+	if(w.pageXOffset){x=w.pageXOffset}
+	else if(w.document.documentElement){x=w.document.documentElement.scrollLeft;}
+	else{var bdy=wndOpener.document.body;if(bdy&&bdy.scrollLeft){x=bdy.scrollLeft;}}
+	return x;
+}
+this.sizeToFit=function(elem){
+	if(elem){
+		var elemWnd=new mywnd(elem),h=elemWnd.getHeight(),w=400;
+		if(document.all)this.wnd.resizeTo(w,h+(isIE?2:0));
+		wndContainer.style.width=(w+0)+'px';
+		wndContainer.style.height=(h+2)+'px';
+	}
+}
+this.center=function(){
+	var wcs=wndContainer.style;
+	wcs.position='absolute';wcs.zIndex='9999';
+	wcs.left='50%';wcs.top='50%';
+	wcs.marginLeft=(-this.getWidth()/2 + this.getScrollLeft())+'px';
+	wcs.marginTop=(-this.getHeight()/2 + this.getScrollTop())+'px';
+}
+}
+
+function add2bsk(qnty)
+{
+	if (d.add.addisc&&d.add.addisc.checked) qnty=parseFloat(d.add.addisc.value);
+	itm.quantity = qnty;
+	bsk.add(itm);
+	bsk.fbsk.add(itm, disc, stk, 0);
+	bsk.fbsk.add(bsk.total(), sdisc, stk, 0);
+	itm._added=false;
+	if(core.getCookStr('showbasket')!='0')tf.wm.rld(tf.content,'basket.html',null,1);
+	setTimeout('wndOpener.sfAddUnpop()',250);
+}
+function chgQnty(f){itm.quantity=parseFloat(f.value);d.reload()}
+function writeContent(){
+getArgs();
+core=args['core'];itm=args['item'];st=args['stock'],pdoc=args['pdoc'];opts=args['options'];
+
+var outstr='';
+
+bsk=core.Basket;
+disc=bsk.disc.get(itm.id);
+bsk.fbsk.delByPr('shop');
+sdisc=bsk.shDisc();
+
+
+d.title=itm.title;
+
+var prc=itm.calc();
+var dm=itm.calc('damt');
+var dmc=dm?LD.LD_DISCOUNTED_TO+' ':'&nbsp;';
+var q=core.nfmt.toLoc(itm.quantity);
+var str='';
+str+=(itm.calc('dsc')!=0?'<br>'+bsk.tax.disp(itm.taxes, itm.calc('dsc'), tf.shopCurrency):'');
+var fb_msg1 = bsk.fbsk.add(itm, disc, stk, (itm.title!='')?1:0);
+var fb_msg2 = bsk.fbsk.add(bsk.total()+itm.calc(), bsk.shDisc(), stk, (itm.title!='')?1:0);
+if (fb_msg1&&fb_msg2) str+='<br><br>'+fb_msg1+'<br>'+fb_msg2; else str+='<br><br>'+fb_msg1+fb_msg2;
+if(st)str+='<br><br>'+st;
+outstr='<br><center><form name=add><table width=90% style="border:0px;"><tr>'
++'<td class="contentBody" style="text-align:'+(itm.price!=0||prc!=0?'left':'center')+';">'+q+' x <span class=product_price>'+itm.title+'</span></td>'
++(itm.price!=0?'<td class="contentBody">'+q+' x '+core.showPrc(itm.price,1)+'</td>':'')
++(prc!=0?'<td class="contentBody" align=right>'+dmc+core.showPrc(prc,1)+'</td>':'')
++'</tr><tr>'
++'<td class="contentBody" colspan=3 align=center><br>'+LD.LD_ADDED_TO_BASKET+str+'</td>';
+
+var qnty=itm.quantity;
+var bskqnty=(bsk.items.get(itm.id))?bsk.items.get(itm.id).quantity:0;
+var range=disc.getNextRange(qnty+bskqnty);
+if (typeof(range)=='object'&&disc.type>=2&&disc.type<=5) {
+	var nmin=parseFloat(range.min);
+	if (disc.getData(nmin)) {
+		itm.quantity=nmin;
+		switch (disc.type.toString()) {
+			case '4': case '5':
+			var adprice=itm.calc('pur',null,null,1)/nmin*(nmin-bskqnty);
+			if (prc/qnty-adprice/(nmin-bskqnty)>0.01) {
+				outstr+='<tr><td class="contentBody" colspan=3 align=center><input sf:object="CheckBox" type=checkbox name=addisc class="GC26 CheckBox" value="'+(nmin-bskqnty)+'">';
+				var a=[nmin-bskqnty,core.showPrc(adprice)];
+				outstr+=(bskqnty>0)?ld('LD_BUY_MORE_FOR_ONLY','',a):ld('LD_BUY_FOR_ONLY','',a);
+				outstr+='</td>';
+			}
+			break;
+			case '2': 
+				outstr+='<tr><td class="contentBody" colspan=3 align=center><input type=checkbox name=addisc class="GC26 CheckBox" sf:object="CheckBox" value="'+(nmin-bskqnty)+'">';
+				var a=[nmin-bskqnty,disc.getData(nmin)];
+				outstr+=(bskqnty>0)?ld('LD_BUY_MORE_AND_GET_FREE','',a):ld('LD_BUY_AND_GET_FREE','',a);
+				
+			break;
+			case '3': 
+				outstr+='<tr><td class="contentBody" colspan=3 align=center><input type=checkbox name=addisc class="GC26 CheckBox" sf:object="CheckBox" value="'+(nmin-bskqnty)+'">';
+				var a=[nmin-bskqnty,bsk.fbsk.getTitles(disc.getData(nmin))];
+				outstr+=(bskqnty>0)?ld('LD_BUY_MORE_AND_GET_FREE','',a):ld('LD_BUY_AND_GET_FREE','',a);
+				
+			break;
+		}
+	itm.quantity=qnty;
+	}
+}
+outstr+='</table>';
+
+function btn(act,disp){return '<input sf:object="Button" class="GC25 Button" type=button onClick="'+act+'" value="'+disp+'"> '}
+outstr+='<br>'
++btn('setTimeout(\'add2bsk('+qnty+')\',250)', LD.LD_ADD)
++btn('wndOpener.addingToBsk=false;setTimeout(\'wndOpener.sfAddUnpop()\',250)', LD.LD_CANCEL)
++'</form></center><br>';
+return outstr;
+}
+function switchFrames(){prg_stop();var s=writeContent();if(s){loadingFrame.innerHTML=s;sfonload();}else setTimeout('wndOpener.sfAddUnpop()',50);}
+function prg_clear(){for(var i=1;i<=prgEnd;i++)d.getElementById('prg'+i).style.backgroundColor='transparent';prgAt=0;}
+function prg_update(){
+if(!args)return;
+if(args&&tf.coreLoaded&&tf.LD_loaded&&tf.greyLoaded){return;}
+prgAt++;
+if(prgAt>prgEnd)prg_clear();
+else d.getElementById('prg'+prgAt).style.backgroundColor=prgColor;
+prgTimer=setTimeout('prg_update()',prgInterval);
+}
+function prg_stop(){clearTimeout(prgTimer);}
+function waitForContent(){
+if(args&&tf.coreLoaded&&tf.LD_loaded&&tf.greyLoaded){switchFrames();try{tf.parent.applyColorScheme(window);}catch(e){};}
+else{setTimeout("waitForContent()",100);}
+}
+waitForContent();
+prg_update();
+
+tf.load('conf.html','conf',true);
+tf.load('grey.html','shipping');
+</script>
+</body>
+</html>
+
+<!--
+Version tag, please don't remove
+$Revision: 94 $
+$Archive: /Autobuild/sf_731/ShopFactory_V6/Common Files/parseLang/pconfirm.html $ -->

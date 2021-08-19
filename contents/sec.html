@@ -1,0 +1,63 @@
+<html xmlns:sf lang="en-us" dir="LTR" >
+	<head>
+		<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+		<style type="text/css">
+		@import "styles/website.css";
+		@import "styles/global.css";
+
+		#entryForm{text-align:left;}
+		#SiteHeadingContainer{margin:0px;}
+		</style>
+
+		<script>
+		var tf=parent.parent,LD=tf;
+		var d=document;function gl(id){return d.getElementById(id);}function dw(s){d.writeln(s)}
+		function ld(name,sf,args){var s;if(LD)s=eval('LD.'+name);if(!LD||!s)s=(sf)?sf:'';if(args){var sa=s.split('%%');s='';for(var i=0;i<sa.length;i++)if(args[i])s+=sa[i]+args[i];else s+=sa[i];}return s.replace('%%','');}
+
+
+		function check(f)
+		{
+			if (!f.passwd.value)
+			{
+				alert(LD.LD_WRONG_PASSWORD);
+				f.passwd.value = '';
+				f.passwd.focus();
+				return;
+			}
+			if (tf.oSec.out(['MmN9KUj4PTWkn/oNHfIo638Ah2rbul1v5tgg'],f.passwd.value) == 'BADKEY')
+			{
+				alert(LD.LD_WRONG_PASSWORD);
+				f.passwd.value = '';
+				f.passwd.focus();
+				return;
+			}
+			tf.oSec.key = f.passwd.value;
+
+			tf.content.location.replace(tf.lang+'/'+(tf.welcomeURL=='index.html'?'front.html':tf.welcomeURL));
+			return;
+		}
+		window.onload=function()
+		{
+			gl('entryForm').entryFormSubmit.value = LD.LD_SUBMIT;
+			gl('entryForm').passwd.focus();
+		}
+		</script>
+	</head>
+<body sf:object="LayoutMaster" class="GC13 contentBody" scroll="auto">
+<table cellpadding="0" cellspacing="0" border="0" align="center" valign="middle" height="100%">
+<tr><td>
+	<div id="SiteHeadingContainer"><h1 id="SiteHeading" class="SiteHeading"></h1></div>
+	<form id="entryForm" name="entryForm" method="POST" action="javascript:check(entryForm);">
+	<div><script>dw(ld('LD_PASSWORD',''))</script></div>
+	<div><input type="password" name="passwd" id="passwd" size="20" maxlength="54">&nbsp;
+	<input type="submit" name="entryFormSubmit" id="entryFormSubmit" value="Submit" /></div>
+	</form>
+</td></tr>
+</table>
+</body>
+</html>
+
+<!--
+Version tag, please don't remove
+$Revision: 3 $
+$Archive: /Autobuild/sf_730/ShopFactory_V6/Common Files/parseLang/sec.html $ -->

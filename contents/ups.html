@@ -1,0 +1,55 @@
+
+<html >
+<head>
+<script>
+var tf=(parent.extra||parent.name=='extra'?parent.tf:this),core=tf.core,LD=tf,ship=tf.shipping;
+if(tf.content.sfAddFrame&&typeof(tf.content.sfAddFrame.updateTab)=='function')
+	var tfc=tf.content.sfAddFrame;
+else
+	var tfc=tf.content;
+
+var query=document.location.search,params=[];
+//query='?errcode=10&f=Method%20Name,Price,Delivery%20time&v=01,231242353,Express,20,2;02,231242353,Ground,10,7';
+if(query!="") {
+	query=query.substring(1,query.length);
+	var pairs=query.split('&');
+	for(var i=0; i<pairs.length; i++) {
+		temp=pairs[i].split('=');
+		params[unescape(temp[0])]=unescape(temp[1]);
+	}
+}
+
+var error=true;
+switch (params['errcode']) {
+case '21':alert(LD.LD_UPS_WRONG_PASSWORD+' ('+params['errcode']+')');
+break;
+case '22':alert(LD.LD_UPS_NO_SHIPPING_METHODS+' ('+params['errcode']+')');
+break;
+case '23':alert(LD.LD_UPS_WRONG_CURRENCY+' ('+params['errcode']+')');
+break;
+case '24': case '25': alert(LD.LD_UPS_WRONG_WEIGHT+' ('+params['errcode']+')');
+break;
+case '26':alert(LD.LD_UPS_OVERWEIGHT+' ('+params['errcode']+')');
+break;
+case '29':alert(LD.LD_ERROR+': '+params['errtext']+' ('+params['errcode']+')');
+break;
+case '31':alert(LD.LD_UPS_UNABLE_TO_CONNECT+' ('+params['errcode']+')');
+break;
+case '32':alert(LD.LD_UPS_WRONG_LOCATION+' ('+params['errcode']+')');
+break;
+default: if(params['f']&&params['v']){
+error=false;
+if (params['v'].substr(params['v'].length-1,1)=='|') params['v']=params['v'].substr(0,params['v'].length-1);
+ship.upsfields[core.region+ship.zip]=params['f'];
+ship.upsvalues[core.region+ship.zip]=params['v'];
+tfc.displayProviderMethods();
+}}
+if(error&&tf.content&&tf.content.loadfinished)tf.content.loadfinished();
+</script>
+</head><body sf:object="LayoutMaster" class="ContentBody">
+</body></html>
+
+<!--
+Version tag, please don't remove
+$Revision: 11 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/ups.html $ -->

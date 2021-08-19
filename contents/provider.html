@@ -1,0 +1,22 @@
+<html >
+<head>
+<script>
+var d=document;
+var query=d.location.search,params=[];
+if(query!="") {
+	query=query.substring(1,query.length);
+	var pairs=query.split('&');
+	for(var i=0; i<pairs.length; i++) {
+		temp=pairs[i].split('=');
+		params[unescape(temp[0])]=unescape(temp[1]);
+	}
+}
+parent.hideframe();
+parent.tf.shipping.providerCost=parseFloat(params['c']);
+parent.tf.shipping.smethod=params['m'];
+parent.tf.shipping.shandle=0;
+parent.updateTab();
+parent.showChkout();
+</script>
+</head><body sf:object="LayoutMaster" class="ContentBody">
+</body></html>

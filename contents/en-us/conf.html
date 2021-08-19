@@ -1,0 +1,117 @@
+<html ><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+
+var tf=parent.tf,core=tf.core;
+function coreSettings(){
+if (!tf.coreLoaded||!tf.core||!tf.core.Basket){setTimeout("coreSettings()",100);return;}
+core=tf.core;
+core.Basket.shDisc('1','0.000','');
+core.Basket.tax=new core.tax();
+core.BTax=core.Basket.tax;
+core.STax=new core.tax();
+
+	core.BTax.init(core.shopRegion,false);
+	core.STax.init(core.shopRegion,false);
+	core.BTax.addArea('TD1','','0.000','No tax',false, 0);
+	
+
+
+// Add tax descriptions for taxes included into price
+populateTSI();
+core.confLoaded=true;
+}
+coreSettings();
+
+function populateTSI(){
+if(!core)core=tf.core;
+if(!core)return;
+var TS=new Array();
+TS['TD1']='';
+core.tsI=new Array();
+var country_code=(core.region)?core.region:core.shopRegion;
+
+for(var s in TS){{core.tsI[s]=TS[s];}}
+}
+
+function greySettings(){
+if (!tf.coreLoaded||!tf.greyLoaded||!tf.shipping||!tf.shipping.shipping||!tf.cntyListLoaded){setTimeout("greySettings()",100);return;}
+core=tf.core,grey=tf.shipping;
+grey.core=core;
+grey.ship=new grey.shipping(grey.cnty, 0, 0.000);
+tf.ship_obj=grey.ship;
+
+
+grey.ship.addMeth('SM1', 'First Class Recorded Delivery');
+grey.ship.addRegn('SM1RS1','Local Region','UK,');
+grey.ship.link('SM1','SM1RS1',0.000,'0',0,'0.000,25.000,1.99;25.000,50.000,2.99;50.000,1000.000,0',0.000,'0',0.000,0.000,'SM1,SM1RS1,0.000,0,0,0.000,25.000,1.99;25.000,50.000,2.99;50.000,1000.000,0,0.000,0,0.000,0.000/F206C630E595A5A043F1B6CAEA52F2C4');
+
+
+grey.ship.addMeth('SM2', 'Special Delivery (includes insurance)');
+grey.ship.addRegn('SM2RS1','Local Region','UK,');
+grey.ship.link('SM2','SM2RS1',0.000,'0',0,'0.000,50.000,4.99;50.000,200.000,5.99;200.000,1000.000,6.99',0.000,'0',0.000,0.000,'SM2,SM2RS1,0.000,0,0,0.000,50.000,4.99;50.000,200.000,5.99;200.000,1000.000,6.99,0.000,0,0.000,0.000/E1651E5BCF391394DC1874B0B6454C9C');
+
+
+
+
+grey.ship.type('2', '0.000000');
+}
+greySettings();
+
+function custInfo(){
+	var grey=tf.shipping;
+	var ret=[];
+
+	var FF=[
+	'0,First Name,customer_firstname,1,0,0,20,1,50,0,0,0,1,1,1,1,'
+	,'1,Last Name,customer_lastname,1,0,0,20,1,50,0,0,0,1,1,1,1,'
+	,'2,Company Name,company_name,1,0,0,20,1,200,0,0,0,1,0,1,1,'
+	,'3,Country,customer_country,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'4,House Number,customer_house_number,1,0,0,20,1,70,0,0,0,1,1,1,1,'
+	,'5,Street,customer_street,1,0,0,20,1,70,0,0,0,1,1,1,1,'
+	,'6,City/Town,customer_city,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'7,State,customer_state,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'8,County,customer_county,1,0,0,20,1,80,0,0,0,1,0,1,1,'
+	,'9,Zip,customer_zip,1,0,0,20,1,20,0,0,0,1,1,1,1,'
+	,'10,Phone,customer_phone,1,0,0,20,1,25,0,0,0,1,1,1,1,'
+	,'12,Email,customer_email,1,0,0,20,1,200,0,0,0,1,1,1,1,'
+	,'13,Your notice to us,customer_notice,2,0,0,50,5,200,0,0,0,1,1,1,1,'
+
+];
+	ret['Billing Address']=grey.crCGIFlds('customer', FF);
+
+	var FF=[
+	'0,First Name,delivery_firstname,1,0,0,20,1,50,0,0,0,1,1,1,1,'
+	,'1,Last Name,delivery_lastname,1,0,0,20,1,50,0,0,0,1,1,1,1,'
+	,'2,Company Name,company_name,1,0,0,20,1,200,0,0,0,1,0,1,1,'
+	,'3,Country,delivery_country,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'4,House Number,delivery_house_number,1,0,0,20,1,70,0,0,0,1,1,1,1,'
+	,'5,Street,delivery_street,1,0,0,20,1,70,0,0,0,1,1,1,1,'
+	,'6,City/Town,delivery_city,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'7,State,delivery_state,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'8,County,delivery_county,1,0,0,20,1,80,0,0,0,1,1,1,1,'
+	,'9,Zip,delivery_zip,1,0,0,20,1,20,0,0,0,1,1,1,1,'
+	,'10,Phone,delivery_phone,1,0,0,20,1,25,0,0,0,1,1,1,1,'
+
+];
+	ret['Delivery Address']=grey.crCGIFlds('customer', FF);
+
+	return ret;
+}
+
+function payMethod(){
+	var grey=tf.shipping;
+	var ret=[];
+
+	return ret;
+}
+
+
+
+tf.conf=this.window;
+tf.confLoaded='en-us';
+
+</script></head><body></body>
+</html>
+
+<!--$Revision: 119 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/conf.html $ -->

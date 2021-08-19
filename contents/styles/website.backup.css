@@ -1,0 +1,215 @@
+
+.GC1{background-color:#816CA4;color:#000000;}
+.GC2{background-color:#F9A5FF;color:#000000;}
+.GC3{background-color:#816CA4;color:#000000;}
+.GC4{background-color:#F2F2F2;border-color:#E0E0E0;color:#000000;}
+.GC5{background-color:#5F1757;color:#F9A5FF;}
+.GC6,.GC6 a,a .GC6{background-color:#F2F2F2;border-color:#5F1757;color:#000000;}
+.GC7{border-color:#816CA4;color:#FFFFFF;}
+.GC8,.GC8 a,a .GC8{background-color:#E0E0E0;border-color:#5F1757;color:#000000;}
+.GC9,.GC9 a,a .GC9{background-color:#E0E0E0;border-color:#5F1757;color:#000000;}
+.GC10{background-color:#F2F2F2;border-color:#816CA4;color:#000000;}
+.GC11{color:#000000;}
+.GC12{background-color:#F2F2F2;color:#000000;}
+.GC13{background-color:#E0E0E0;border-color:#816CA4;color:#000000;}
+.GC14,.GC14 a,a .GC14{background-color:#E0E0E0;color:#000000;}
+.GC15,.GC15 a,a .GC15{background-color:#F2F2F2;border-color:#E0E0E0;color:#000000;}
+.GC16,.GC16 a,a .GC16{background-color:#5F1757;border-color:#E0E0E0;color:#FFFFFF;}
+.GC17{background-color:#ffffff;color:#000000;}
+.GC18{color:#000000;}
+.GC19{color:#000000;}
+.GC20{background-color:#F2F2F2;color:#000000;}
+.GC21{color:#BD0018;}
+.GC22{background-color:#ffffff;color:#000000;}
+.GC23{background-color:#F2F2F2;border-color:#F2F2F2;color:#000000;}
+.GC24{background-color:#5F1757;border-color:#F2F2F2;color:#FFFFFF;}
+.GC25{color:#000000;}
+.GC26{background-color:#ffffff;border-color:#5F1757;color:#000000;}
+.GC27{background-color:#ffffff;border-color:#ffffff;color:#000000;}
+.GC28,.GC28 a,a .GC28{border-color:#6F6F6F;color:#000000;}
+.GC29,.GC29 a,a .GC29{background-color:#F9A5FF;border-color:#6F6F6F;color:#FFFFFF;}
+.GC30,.GC30 a,a .GC30{background-color:#F2F2F2;color:#000000;}
+.GC31,.GC31 a,a .GC31{background-color:#E0E0E0;color:#000000;}
+.GC32,.GC32 a,a .GC32{background-color:#816CA4;border-color:#F2F2F2;color:#000000;}
+.GC33,.GC33 a,a .GC33{background-color:#ffffff;border-color:#ffffff;color:#000000;}
+.GC34,.GC34 a,a .GC34{background-color:#F2F2F2;border-color:#E0E0E0;color:#000000;}
+.GC35,.GC35 a,a .GC35{background-color:#E0E0E0;border-color:#5F1757;color:#000000;}
+.GC36{background-color:#5F1757;color:#FFFFFF;}
+.GC37{background-color:#F2F2F2;color:#000000;}
+.GC38{background-color:#f9f9f8;color:#000000;}
+.GC39{background-color:#816CA4;color:#000000;}
+.GC40{background-color:#ffffff;color:#000000;}
+.GC41{background-color:#f9f9f8;color:#000000;}
+.GC42{color:#816CA4;}
+.GC43,.GC43 a,a .GC43{background-color:#560280;color:#FFFFFF;}
+.GC44{background-color:#E0E0E0;}
+.GC45{background-color:#560280;color:#FFFFFF;}
+.GC46{background-color:#560280;}
+.GC47{background-color:#ffffff;}
+.GC48{background-color:#f9f9f8;border-color:#F2F2F2;color:#000000;}
+.GC49{background-color:#f9f9f8;border-color:#F2F2F2;color:#000000;}
+html body, div, p, td, input, select /* font */{font-family:Arial, Helvetica, Tahoma, sans-serif;}
+a{color:#0000FF;text-decoration:none;text-decoration:none;text-decoration:none;text-decoration:none;text-decoration:none;text-decoration:none;}
+/* **** END: Base system colour styles and declarations **** */
+
+/* ** BEGIN: Primary declarations ** */
+html {text-align:center;}
+body, div, p, td, input, select {font-style:normal;}
+html, body, body.ContentBody {height:100%;margin:0;padding:0;text-align:center;}
+body.ContentBody {background-image:none;}
+body {font-size:12px;}
+ /* IE Support */
+form {margin:0;padding:0;}
+h1, h2, h3 {margin:0;padding:0;font-weight:bolder;font-size:inherit;}
+a {text-decoration:none;}
+
+#WebSite{position:relative;width:980px;height:100%;margin:0 auto 0;text-align:left;border:0;}
+#WebSiteHeader{position:relative;width:980px;height:88px;margin:0 auto;text-align:left;border:0;}
+#WebSiteContent{position:relative;width:980px;height:100%;}
+#Index1{position:absolute;right:0px;top:58px;width:980px;height:25px;text-align:right;z-index:40;}
+#idx1Navigation{position:absolute;right:2px;}
+
+#SideBar_L{position:relative;width:192px;height:100%;float:left;}
+#Index2{padding:0;margin-left:5px;margin-bottom:10px;}
+#Content{position:relative;float:right;width:788px;height:100%;padding:0;text-align:left;line-height:150%;overflow-x:auto;}
+#FooterClearance{position:relative;clear:both;font-size:1px;height:1px;margin:-1px 0 0;padding:0;overflow:none;}
+#FooterClearance span {display:none;}
+#WebSiteFooter{position:relative;width:980px;height:25px;margin:0 auto;text-align:left;border:0;}
+
+
+.noDisplay {display:none;}
+
+/* ** END: Primary declarations ** */
+
+#AppLogo{position:absolute;width:193px;height:20px;padding-top:5px;color:white;text-align:center;}
+
+#CompanyImageAndSiteHeading{position:absolute;top:5px;left:5px;z-index:700;height:50px;width:750px;overflow:hidden;}
+#CompanyImage{position:relative;display:inline;text-align:left;height:50px;padding-right:5px;}
+#CompanyImage * {vertical-align:middle;}
+/*\*/
+#CompanyImage {display:table-cell;vertical-align:middle;}
+/**/
+* html #CompanyImage span {display:inline-block;height:100%;}
+/*\*//*/
+#CompanyImage span {width:1px;}
+/**/
+h1#SiteHeading {display:inline;font-size:20px;line-height:50px;white-space:pre;overflow:hidden;background-color:transparent;}
+#SiteHeadingContainer {position:relative;display:inline;text-align:left;height:50px;}
+#SiteHeadingContainer * {vertical-align:middle;}
+/*\*/
+#SiteHeadingContainer {display:table-cell;vertical-align:middle;}
+/**/
+* html #SiteHeadingContainer span {display:inline-block;height:100%;}
+/*\*//*/
+#SiteHeadingContainer span {width:1px;}
+/**/
+
+/* BEGIN SITESLOGAN */
+#SiteSlogan{position:absolute;top:0px;right:20px;text-align:center;display:table;height:58px;width:190px;z-index:700;overflow:hidden;}
+#SiteSlogan_inner {display:table-cell;vertical-align:middle;}
+/* IE SUPPORT */
+* html #SiteSlogan, * html #SiteSlogan_inner {display:block;}
+* html #SiteSlogan_inner{position:relative;top:50%;}
+* html #SiteSlogan_content{position:relative;top:-50%;}
+/*\*/
+* html #SiteSlogan_inner {height:1px;}
+h2#SiteSlogan_content {margin:0;padding:0;font-size:15px;line-height:18px;}
+/* END SITESLOGAN */
+
+/* ** BEGIN: Other Design Images ** */
+
+#DesignImage1{position:absolute;z-index:0;}
+
+/* ** END: Other Design Images ** */
+
+
+/* ** BEGIN: ObjectFragments ** */
+
+#Login{position:relative;width:192;padding:5px 0;text-align:center;}
+#Login a {background:transparent;}
+
+#SwitchCurrency{position:relative;width:192px;padding:5px 0;text-align:center;}
+#SwitchCurrency a {background:transparent;text-decoration:underline;}
+
+#Search, #SwitchLang{position:relative;float:right;padding:2px 5px;}
+#Search td{padding:0;}
+input.SearchTextField {width:120px;height:15px;font-size:12px;margin:0;margin-right:3px;text-align:left;border:1px solid #000;}
+a.SearchButton {margin:0;border:0;}
+#SwitchLang select {width:166px;font-size:12px;}
+
+#MiniCart{position:relative;display:block;float:left;width:370px;padding:5px 20px;overflow:hidden;}
+#MiniCart a {background:transparent;}
+#SelectBar:after {content:".";display:block;height:0;clear:both;visibility:hidden;}
+#SelectBar{position:relative;width:980px;display:inline-table;}
+/* not ie-mac \*/
+* html #SelectBar {height:1%;}
+#SelectBar {display:block;}
+/* not ie-mac */
+
+/* ** END: ObjectFragments ** */
+
+
+
+
+/* ** BEGIN: Index2 ** */
+td.idx2 a, td.idx2MouseOver a {width:162px;}
+/* ** END: Index2 ** */
+
+
+/* ** BEGIN: ** */
+
+#ThinLine.GlobalColor1 {background-color:transparent;border-width:0;border-bottom-width:1px;border-bottom-style:solid;}
+.ListColor1, .ListColor2, .ListHighLight {text-align:center;padding:2px;border:0;border-collapse:collapse;}
+.Addressformat {margin:0;padding:0;text-align:right;background-image:none;border:0;}
+
+/*** Page objects ***/
+.SubPageNavigation, #CurrencyLink.LayoutObject, #BackLink.LayoutObject {margin-bottom:5px;}
+.SubPageNavigation {width:100%;}
+
+.PageHeader {font-size:inherit;}
+.PageLinkBox {background-position:top;border-style:solid;}
+.PageFooter {border-style:solid;}
+
+/*** Product objects ***/
+.Product, .ProductCrossPromotion {background-position:top;border-style:solid;}
+.ProductIntroduction {font-size:18px;}
+.ProductOptions {background-color:transparent;border:0;}
+.ProductPrice, .ProductPriceIntro{padding-right:2px;padding-left:2px;font-size:15px;vertical-align:bottom;}
+.ProductPriceIntro {text-decoration:line-through;}
+.ProductDiscountMessage {font-weight:bold;}
+.ProductMoreImages {margin:2px;border-width:1px;border-style:solid;white-space:nowrap;}
+.ViewbasketMaster {margin:0;padding:0;text-align:center;}
+.ViewbasketHeader {height:20px;margin:0;padding:0;font-weight:bold;text-align:center;text-transform:capitalize;}
+.FavoritesMaster {margin:0;padding:0;font-weight:bold;text-transform:capitalize;border-width:1px;border-style:solid;}
+.FavoritesContent {width:100%;margin:0;padding:0;border-width:1px;border-style:solid;}
+.DropDowns {width:180px;}
+.ViewbasketRow1, .ViewbasketRow2, .ViewbasketExtras {margin:0;padding:0;}
+.ViewbasketRow2, .ViewbasketExtras {border-width:1px;border-style:solid;}
+.ViewbasketCheckOut {height:20px;margin:20px;padding:0;vertical-align:bottom;background-color:transparent;border:0;}
+.PageFooter {border-style:solid;}
+.NextPreviousLink, .NextPreviousLink a:hover{padding:2px 7px 2px 7px;text-align:center;font-weight:bold;font-size:13px;}
+span.NextPreviousLink{font-weight:normal;}
+.ImgLink {cursor:pointer;}
+
+.ResellerFormTable {width:250px;padding-bottom:30px;border-width:1px;border-style:solid;}
+.ResellerLogOutIcon {width:70px;margin:0;padding:0;border-width:1px;border-style:solid;}
+.ResellerLogInIcon {margin-top:3px;padding:0;}
+
+
+
+input.TextInput, input.ListBox, select, textarea {border-width:1px;border-style:solid;}
+
+
+.SignUp {font-family:inherit;font-weight:bolder;text-align:center;text-decoration:underline;}
+.Footer, .TocFooter{padding-top:3px;border:0;}
+html body .PageTitle,html body .PageTitle *{font-family:Georgia, serif;font-size:40px;font-weight:bold;}
+html body .PageIntroduction,html body .PageIntroduction *{font-family:Georgia, serif ! important;font-size:18px ! important;font-style:italic ! important;}
+html body .PageDescription,html body .PageDescription *{font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;font-size:12px;}
+
+html /* scrollbars */{}
+
+/*
+Version tag, please don't remove
+$Revision: 8 $
+$Archive: /Autobuild/sf_730/ShopFactory_V6/Templates/Website/LIN-AA_1024 x #/styles/website.css $
+*/

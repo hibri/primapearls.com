@@ -1,0 +1,16 @@
+<html >
+<head>
+<script>
+var tf=parent.tf,d=document;
+var jsfile=d.location.search.replace(/\?page\=([^\&]*)([&]?.*)/,'$1')
+var loaded=false;
+if(jsfile=='none'){loaded=true;}
+else if(jsfile){d.write('<script src="'+tf.wm.url(jsfile,null,true)+'"></s'+'cript>');}
+tf.price=this.window;
+</script>
+</head>
+</html>
+<!--
+Version tag, please don't remove
+$Revision: 11 $
+$Archive: /ShopFactory_V6/Common Files/parseLang/loadjs.html $ -->

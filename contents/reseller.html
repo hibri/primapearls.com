@@ -1,0 +1,55 @@
+<script>
+var tf=parent.tf,core=tf.core,LD=tf,d=document;
+
+var q=d.location.search,parm=[];
+if(q!=""){
+	q=q.substring(1,q.length);
+	var pairs=q.split('&'),len=pairs.length;
+	for(var i=0;i<len;i++){
+		temp=pairs[i].split('=');
+		parm[unescape(temp[0])]=unescape(temp[1]);
+	}
+}
+
+switch(parm['errcode']){
+case '0':
+var temp=parm['discount'].split('|');
+var temp2; var prdc=new Array(); var values=new Array();
+for (var i=0; i<temp.length; i++) {
+temp2=temp[i].split(':');
+prdc[i]=temp2[0];
+if (!isNaN(prdc[i])) prdc[i]+='%%P';
+values[i]=temp2[1];
+}
+
+if(core){
+var type=(parm['type']=='customer'?'11':'10');
+core.savCookStr('ResellerID',core.getCookStr('TempRID'),'');
+core.updateReseller(prdc,values,type);
+tf.utils.displayResellerForm(true);
+if(parm['freeship']=='1'){ tf.frship=true;tf.frship_am=(parm['min_amount'])?parseInt(parm['min_amount']):0;}
+tf.ismember=(parm['type']=='member')?1:0;
+}
+if(parm['name'])alert(LD.ld('LD_WELCOME_RESELLER','',[parm['name']]));
+tf.content.location=tf.wm.url(tf.lastpage?tf.lastpage:'front.html','-',1);
+break;
+case '1':
+if(core){
+core.savCookStr('ResellerID','','');
+core.savCookStr('ResellerPasswd','','');
+}
+alert(LD.LD_WRONG_PASSWORD);
+break;
+case '2':
+if(core){
+core.savCookStr('ResellerID','','');
+core.savCookStr('ResellerPasswd','','');
+}
+alert(LD.LD_MUST_HAVE_GLOBECHARGE);
+}
+</script>
+
+<!--
+Version tag, please don't remove
+$Revision: 3 $
+$Archive: /ShopFactory_V6/Templates/Special Pages/Reseller/PAAH_2/page.html $ -->

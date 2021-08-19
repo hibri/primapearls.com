@@ -1,0 +1,694 @@
+
+<html xmlns:sf >
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+	<meta name="robots" content="noindex,follow">
+
+<script>
+var tf=parent.tf,core=tf.core;
+var d=document;function dw(s){d.write(s);}
+var _loc = new Array();
+</script>
+<script>
+var ship;
+
+dw('<scr'+'ipt src="'+tf.wm.url('cntyList.js','-',1)+'"></sc'+'ript>');
+
+var addressFormatHTML;
+dw('<scr'+'ipt src="'+tf.wm.url('contactus_address.js',tf.lmd['contactus'],1)+'"><'+'/sc'+'ript>');
+
+
+
+var langDir=tf.wm.path(escape(tf.location))+'contents/'+tf.lang+'/';
+var CS=[];
+
+CS['basket']=[
+	'basket',
+	
+	'ship_total=$_.shipPrice(tf.ship_obj)',
+	'weight=overall("weight")',
+	'tax_total=$_.chk_total_tax',
+	'quantity=overall("quantity")',
+	'purchase=total()',
+	'extotal=total("exc")',
+	'intotal=total("inc")',
+	'total=$_.chk_total'
+];
+
+CS['shop']=[
+	'shop',
+	'name=""',
+	'html_lang=tf.lang',
+	'host=tf.wm.host',
+	'symbol=tf.currentCurrency.abbrev',
+	'decimal=nfmt.delim()',
+	'scurrency=tf.shopCurrency.getSignedID()',
+	'sprecision=tf.shopCurrency.decimal_places',
+	'ccurrency=tf.currentCurrency.iso',
+	'cprecision=tf.currentCurrency.decimal_places',
+	'crate=parseFloat(tf.currentCurrency.multiplier/tf.shopCurrency.multiplier)',
+	'sfid="No reginfo;381b1440"',
+	'term=langDir+"terms.html"',
+	'weightUnit="kg"',
+	'discounts_secure="1,0.000,/8A435D29F62E0826E5F82C94F685552A"',
+	'tax_secure="0.000,TD1,1/B1B56F888D0369CDA73F9161E7DDEE0B"',
+	'deduct_local_tax="1"',
+	'thankyou_url=langDir+"thankyou.html"',
+	'unsuccessful_url=langDir+"unsuccessful.html"',
+	'sessid=tf.wm._rnd',
+	'terms_email_url=langDir+"terms_email.html"',
+	'terms_required="1"',
+	'terms_title="Terms"',
+	'defaultHTMLFile="index.html"',
+	'articleNumSeparator=""'
+];
+
+CS['item']=[
+	'item',
+	'prodid=id',
+	'quantity=quantity',
+	'title=title',
+	'price=price',
+	'weight=weight()',
+	'itemNo=getItemNo()',
+	'taxes=taxes',
+	'useDec=useDec',
+	'esd=esd',
+	'prdc=prdc',
+	'page=purl',
+	'img=escape(pimg)',
+	'stotal=calc()',
+	'product_secure=sig()'
+];
+
+CS['freeitem']=[
+	'freeitem',
+	'prodid=id',
+	'quantity=quantity',
+	'title=title',
+	'price=price',
+	'weight=weight()',
+	'itemNo=itemNo'
+];
+
+CS['disc']=[
+	'disc',
+	'type=type',
+	'value=value',
+	'timelimit=tlim'
+];
+
+CS['gdisc']=[
+	'gdisc',
+	'value=value'
+];
+
+CS['option']=[
+	'option',
+	'field=name',
+	'display=title',
+	'required=type',
+	'choice=choice()',
+	'price=price()',
+	'weight=weight()',
+	'optid=optId()',
+	'combine=combine'
+];
+
+CS['tax']=[
+	'tax',
+	'taxid=id',
+	'amount=cache',
+	'taxName=taxName',
+	'code=code',
+	'percentage=perc',
+	'incTax=incTax',
+	'isexempt=exempt',
+	'exemptNo=exNo'
+];
+
+CS['shiptax']=[
+	'shiptax',
+	'taxid=id',
+	'amount=cache',
+	'taxName=taxName',
+	'code=code',
+	'percentage=perc',
+	'incTax=incTax',
+	'isexempt=exempt',
+	'exemptNo=exNo'
+];
+
+CS['ship']=[
+	'shipinfo',
+	'type=type()',
+	'rcode=core.region',
+	'mcode=core.method',
+	'region=rgnName',
+	'method=mthName',
+	'tax=tax()',
+	'ADSA="1"',
+
+	'packages=packages'
+];
+
+CS['sDetails']=[
+	'shipdetails',
+	'chargeType=chargeType',
+	'handling=handling',
+	'minCharge=minCharge',
+	'rateType=rateType',
+	'perBox=perBox',
+	'costPerWU=costPerWU',
+	'maxWeightPerBox=maxWght',
+	'sig=sig'
+];
+
+CS['merchant']=[
+	'merchant',
+	'Country="UK"',
+	'EmailOrders="sales@primapearls.com"',
+	'merchantHTML=window.addressFormatHTML'
+];
+
+CS['reseller']=[
+	'reseller',
+	'mid=tf.clickThrough',
+	'rid=core.getCookStr("ResellerID")?core.getCookStr("ResellerID"):tf.rid',
+	'rpwd=core.getCookStr("ResellerPasswd")',
+	'aid=tf.aid'
+];
+
+CS['fieldnames']=[
+	'fieldnames',
+	'fields="Order,FieldName,KeyName,FieldType,DataType,DropdownType,BoxWidth,BoxLines,MaxLength,DefaultAnswer,NumberOfAnswers,UserDeletable,Required,ProvidedByCustomer,RadioTypeFlag,CheckboxTypeFlag"'
+];
+
+CS['field']=['field', 'value='];
+CS['customer']=['custdetails'];
+CS['payment']=['payment'];
+CS['pmethod']=['method', 'typename=name', 'typecode=code'];
+CS['pservice']=[
+	'service',
+	'ID=[0]',
+	'Name=[1]',
+	'MID=[2]',
+	'Password=[3]',
+	'URL=[4]',
+	'PGP=[5]',
+	'Extra1=[6]',
+	'Extra2=[7]',
+	'ServiceID=[8]',
+	'PServType=[9]'
+];
+
+CS['colors']=[
+	'colors',
+	'bg=document.bgColor',
+	'link=document.linkColor',
+	'alink=document.alinkColor',
+	'vlink=document.vlinkColor',
+	'classViewbasketHeader=core.getCssText(".GC5")',
+	'classBody=core.getCssText(".GC22")',
+	'classContentBody=core.getCssText("body.ContentBody")'
+];
+
+
+CS['order']=[
+	'order',
+	'format="HTML"',
+	'delim=";"',
+	'min="-1.000000"',
+	'max="-1.000000"',
+	'email_field="confirm_email"',
+	'attach="1"',
+	'integrateOrderTracking="1"',
+	
+];
+
+function crCGIFlds(id, arr, obj)
+{
+	var aref=new Array();
+	for (var i=0;i<arr.length;i++) aref[i]=Code.code('field', arr[i]);
+	return Code.code(id, obj, aref);
+}
+
+
+
+function prepare4post(arr){
+	function _cde(arr, type, obj, aref) {
+		if (arr) arr[arr.length] = Code.code(type, obj, aref);
+		else return Code.code(type, obj, aref)
+	}
+
+	var bsk = core.Basket;
+	if (bsk.items.cnt()<=0) return;
+	if (!arr) arr=new Array();
+	var itm = bsk.items.start();
+	while (itm!=null) {
+		var a=new Array();
+		for (var i=0, o=itm.options;i<o.cnt();i++) _cde(a, 'option', o.get(i));
+		_cde(a, 'disc',bsk.disc.get(itm.id));
+		if (core.getCookStr('ResellerID')!='') {
+			var gd=bsk.gdisc.getById(itm.prdc);
+			if (!gd) gd=bsk.gdisc.getById('ALL_OTHERS');
+			if (gd)	_cde(a, 'gdisc',gd);
+		}
+		
+		if(itm.prdc)itm.prdc=itm.prdc.replace('%%P','');
+		_cde(arr, 'item', itm, a);
+		if (!isNaN(itm.prdc)) itm.prdc+='%%P';
+		itm = bsk.items.next();
+	}
+
+	var itm = bsk.fbsk.items.start();
+	while (itm!=null) {
+		_cde(arr, 'freeitem', itm);
+		itm = bsk.fbsk.items.next();
+	}
+
+	for (var i=0, tl=bsk.tax._tax;i<tl.cnt();i++) _cde(arr, 'tax', tl.get(i));
+	for (var i=0, tl=core.STax._tax;i<tl.cnt();i++) _cde(arr, 'shiptax', tl.get(i));
+
+	if(tf.conf) {
+		_cde(arr, 'fieldnames');
+		var tmp,pa=[];
+		tmp=tf.conf.custInfo();for(i in tmp)arr[arr.length]=tmp[i];
+		tmp=tf.conf.payMethod();for(i in tmp)pa[pa.length]=tmp[i];
+	}
+
+	if(typeof(ship)=='undefined'||!ship)conf.greySettings();
+	_cde(arr, 'payment', this, pa);
+	_cde(arr, 'ship', ship, new Array(_cde(null, 'sDetails', ship.cLink)));
+	_cde(arr, 'merchant', bsk);
+	_cde(arr, 'disc', bsk.shDisc());
+	_cde(arr, 'reseller');
+	_cde(arr, 'shop', this);
+	_cde(arr, 'order');
+	_cde(arr, 'colors');
+	return _cde(null, 'basket', bsk, arr);
+}
+
+function xml(codes)
+{
+	this.code = xmlCode;
+	this._cd  = codes||new Array();
+	return this;
+}
+
+var _inv = new Array();
+_inv['&'] = '%26amp;';
+_inv['"'] = '&quot;'
+_inv['\''] = '&apos;'
+_inv['>'] = '&gt;'
+_inv['<'] = '&lt;'
+
+function xmlCode(str, $_, aref)
+{
+	function _append(s){
+		if(s==''||s.charAt(0)=='[')s='$_'+s;
+		else if(s.indexOf('escape')==0)s="escape($_."+s.replace(/^.+\(([^\)]+)\)/,"$1")+")";
+		else if(s.indexOf('.')==-1)s='$_.'+s;
+		return s;
+	}
+
+	function _esc(s) {
+		if (typeof(s) != 'string') return s;
+		for (var j in _inv) if (s.indexOf(j)!=-1) {
+			eval('var re=/'+j+'/g');
+			s=s.replace(re,_inv[j]);
+		}
+		return smart_unescape(s);
+	}
+
+	var nfmt = core.nfmt;
+	var arr=this._cd[str];
+	if (!arr) {
+		var end = str.indexOf('>');
+		if (end == -1) end = str.length;
+		str = str.substring(str.indexOf('<')+1,end);
+		arr = str.split(' ');
+	}
+
+	var ret=new Array();
+	for (i in arr) {
+		var tmp = arr[i].split('='),val=(arr[i].indexOf('=')!=-1)?arr[i].substr(arr[i].indexOf('=')+1):null;
+		if (val==null) ret[i]=arr[i];
+		else if (val.charAt(0)=='"')
+			ret[i]=tmp[0]+'="'+_esc(val.substring(1,val.length-1))+'"';
+		else {
+			var s=eval(_append(val));
+			if (s==null)s='';
+
+			else s = _esc(s);
+
+			
+			ret[i]=tmp[0]+'="'+s+'"'
+		}
+	}
+	str = '<'+ret.join(' ');
+	str+=(aref)?'>\n'+aref.join('')+'</'+ret[0]+'>':'/>\n';
+	return str;
+}
+
+var Code=new xml(CS);
+
+function cnty()
+{
+	this._rs	= new Array();
+	this.reg	= cyReg;
+	this.filter	= cyFlt;
+	return this;
+}
+
+function cyReg(cs,m)
+{
+	if (cs==null) {		// Returns cnty codes list as string
+		var s=new Array();
+		for (i in this._rs) if (i&&this._rs[i]==1) s[s.length]=i;
+		return s;
+	}
+	var s = cs.split(',');
+	var rs = this._rs;
+	if (!m) m=1;
+	for (var i=0; i<s.length; i++) {
+		var c=s[i];
+		if (c=='01') {
+			var allcodes='';
+			for (var j=0; j<_loc['All'].length; j+=2) {if (_loc['All'][j].substr(0,1)!='0') allcodes+=','+_loc['All'][j];}
+			this.reg(allcodes.substr(1)); continue;
+		}
+		var l=c.length; if(l>6)l=6
+		for (var j=l; j>2; j-=2) this.reg(c.substring(0, l-2),2);
+
+		if (rs[c]==null||rs[c]==2) rs[c]=m;
+	}
+}
+
+function cyFlt(arr)
+{
+for (var i=0; i<arr.length; i+=2) 
+	if (arr[i].charAt(0)!='-' && this._rs[arr[i]]==null) arr[i]='-'+arr[i];
+}
+
+
+//----------------------------------------------------------------------
+
+function reg_meth(mid, rid, mc, ct, rt, rg, hg, pb, mw, cpwu, zipStr, sig)
+{
+	this.rid	= rid;
+	this.mid	= mid;
+	this.chargeType	= ct;
+	this.handling	= hg;
+	this.minCharge	= parseFloat(mc);
+	this.rateType	= parseFloat(rt);
+	this.perBox	= parseFloat(pb);
+	this.costPerWU	= parseFloat(cpwu);
+	this.maxWght	= parseFloat(mw);
+	this.rg		= new core.dynObj('range');
+	this.zip	= zipStr.split(',');
+	this.sig	= sig;
+
+	var zip = this.zip;
+	for (var i=0; i<zip.length; i++) zip[zip[i]] = '';
+
+	if (rg==null) rg = '';
+	var rg_a  = rg.toString().split(';');
+	for (var i=0; i<rg_a.length; i++) {
+		if (rg_a[i] == '') continue;
+		var t = this.rg.empty();
+		t.init(rg_a[i]);
+		this.rg.add(t);
+	}
+
+	this.incl	= rmIncl;
+	this.getData	= rmGetData;
+
+}
+
+function rmIncl(code)
+{
+	for (var i=0; i<this.code.length; i++) if (this.code[i] == code) return i;
+	return -1;
+}
+
+function rmGetData(key)
+{
+	var rg = this.rg.start();
+	if (rg=='') return '';
+	var cnt = this.rg.cnt();
+	for (var i=0; i<cnt; i++) {
+		if (rg=='') continue;
+		var vl = rg.getData(key);
+		if (vl != '') return vl;
+		rg = this.rg.next();
+	}
+	return this.rg.get(cnt-1).data
+}
+
+function shipping(cnty_obj, tt, tv)
+{
+	this.method = new core.dynObj('keyval');
+	this.region = new core.dynObj('keyval');
+	this.cnty   = cnty_obj;
+	this._ttype = tt;
+	this._tval  = tv;
+	this.links  = new Array();
+
+	this.type    = shType;
+	this.add     = shAdd;
+	this.addRegn = shAddR;
+	this.addMeth = shAddM;
+	this.link    = shLink;
+	this.listM   = shListM;
+	this.tax     = shTax;
+	this.cost    = shCost;
+	this.calc    = shCalc;
+	this.reset   = shReset;
+	this.cLink   = new reg_meth('','',0,0,0,'',0,0,0,0,'','');
+	this.clone   = shClone;
+}
+function shClone(o,lvl,o2){
+	if(isNaN(lvl))lvl=0;else if(lvl>10)return;
+	lvl++;
+	var oThis=(o2?o2:this);
+	for (var i in o){
+		if(typeof(o[i])=='object')
+			if(!isNaN(o[i].length)){oThis[i]=[];shClone(o[i],lvl,oThis[i]);}
+			else oThis[i]=new shClone(o[i],lvl);
+		else
+			oThis[i]=o[i];
+	}
+}
+function shReset(){this._tax=0;}
+function shType(type, price)
+{
+	if (type==null||type=='') type=this._shpType;
+	if (price!=null) this.price = isNaN(price)?0:parseFloat(price);
+	this._shpType = type;
+	return type;
+}
+
+function shAdd(dyn, id, name, code)
+{
+	var t = dyn.empty(id);
+	t.init(id, name, code);
+	dyn.add(t);
+}
+
+function shAddR(rid, name, code)
+{
+	this.add(this.region, rid, name, code);
+}
+
+function shAddM(id, name)
+{
+	this.add(this.method, id, name);
+}
+
+function shLink(mid, rid, mc, ct, rt, rg, hg, pb, mw, cpwu,sig)
+{
+	var regn = this.region.get(rid);
+	if (regn==''||this.method.get(mid)=='') return;
+	this.links[this.links.length] = new reg_meth(mid,rid,mc,ct,rt,rg,hg,pb,mw,cpwu,regn.str,sig);
+	this.cnty.reg(regn.str);
+}
+
+function shListM(code, bsk)
+{
+	var ret = new Array()
+	var unq = new Array()
+	var lk = this.links;
+	if (code.length>4) code=code.substring(0,4);
+	else if (code == '') return ret;
+
+	var pship = bsk.noShip();
+	for (var i=0; i<lk.length; i++) {
+		if (lk[i].zip[code] == null) continue;
+		var mid = lk[i].mid;
+		if (unq[mid] || pship[mid]) continue
+		ret[ret.length] = mid;
+		ret[ret.length] = this.method.get(mid).val();
+		unq[mid] = ''
+	}
+	return ret;
+}
+
+function shTax(shPrc,exTaxPrc, inc,exShPrc)
+{
+if (shPrc&&exTaxPrc) {
+		var rate=0, STax = core.STax, BTax=core.BTax;
+		if (this._ttype==1) {
+			rate=core.Basket.getAvgTaxAmt(inc)/exTaxPrc;
+			var val=exShPrc?exShPrc*rate:BTax.exTax(BTax.allIDs(),shPrc)*rate;
+			
+			return val;
+		}
+		else {
+			rate = STax.regnRate(STax.allIDs(),core.BTax.currRegn());
+			this._tax = STax.exTax(STax.allIDs(),shPrc)*rate;
+			
+		}
+
+	}
+	return this._tax?this._tax:0;
+
+}
+
+function shCost(exTaxPrc, weight, quantity, code, mid)
+{
+	if (this.type()==0) return 0;
+
+
+
+
+	var lk  = this.links;
+	var tot = 0;
+
+	if (code.length>4) code=code.substring(0,4)
+	for (var i=0; i<lk.length; i++)
+		if (lk[i].mid == mid && lk[i].zip[code]!=null) break;
+
+	if (lk[i]==null) return -1
+	var rm = lk[i]; this.cLink= rm;
+
+	var _m = this.method.get(rm.mid), _r = this.region.get(rm.rid);
+	this.mthName = _m?_m.val():''
+	this.rgnName = _r?_r.val():''
+	var extra = rm.handling
+	switch (rm.chargeType) {			// Charge Type price/weight/units
+		case '0': case '3': tot = exTaxPrc; break;
+		case '1': tot = weight; break;
+		case '2': tot = quantity; break;
+		default: return -1
+	}
+
+	var itmwght=parseInt(weight/quantity)
+	var pkg = 1
+	var pkgs=new Array()
+	pkgs[0]=tot;
+	if (rm.chargeType==1&&rm.perBox!=0&&rm.maxWght>0&&rm.maxWght>=itmwght) {
+		var curwght=itmwght;
+		for (var i=0; i<quantity; i++) {
+			if ((curwght+itmwght)>rm.maxWght) {
+				pkgs[pkg-1]=curwght;if (i!=(quantity-1)) {curwght=itmwght; pkg++;} else curwght=0;
+			} else curwght+=itmwght;
+		}
+		if (curwght>0) {pkgs[pkg-1]=curwght-itmwght;}
+		extra*=pkg;
+	}
+	this.packages = pkg;
+
+	var totsum=0;
+	for (var i=0;i<pkg;i++) {
+	tot=pkgs[i];
+	var value = parseFloat(rm.getData(tot));
+	if (!isNaN(value)) {
+		if (rm.chargeType==3) value = (exTaxPrc*value/100)
+		if (rm.rateType==1) value *= tot
+		totsum+=value;
+	}}
+	return totsum+extra;
+
+}
+
+function shCalc(exTaxPrc, purPr, weight, quantity, code, mid) {
+if (this._ttype==1) tax=core.BTax; else tax=core.STax;
+var a = tax.allIDs().split(',');
+var cost=this.cost(exTaxPrc, weight, quantity, code, mid);
+var avgtax=0;
+if (this._ttype==1) avgtax=core.Basket.getAvgTaxAmt(1);
+if (this._ttype==1) {
+	if(purPr==0)p=cost;
+	else p=cost/(1+avgtax/purPr);
+} else {
+	p=tax.exTax(tax.allIDs(),cost);
+}
+var c=core.BTax.currRegn();
+var d=0, a=tax.allIDs().split(',');
+if (this._ttype!=1) {
+	for (var j=0; j<a.length; j++)
+		if (tax._tax.get(a[j])) d+=(tax._tax.get(a[j]).incTax)?tax.singleAmt(a[j],p,c):0;
+} else {
+	d+=avgtax;
+}
+return (this._ttype!=1)?p+d:(purPr*p>0)?p+d/purPr*p:p;
+}
+
+var cnty=new cnty();
+
+
+function smart_unescape(s) {
+try {
+ return unescape(s);
+} catch (e) { return s;}
+}
+
+function smart_escape(s) {
+if(window.encodeURI) return encodeURI(s);
+else return escape(s)
+}
+function setShipMethods(){
+	if(!document.forms['form0']||!document.forms['form0'].elements['provider']){setTimeout('setShipMethods()',100);return;}
+	var shipProvider=document.forms['form0'].elements['provider'].value;
+	if(shipProvider.match(/service id="(.*?)" logo="(.*?)" zip="(.*?)" page="(.*?)" mycnty="(.*?)" mycode="(.*?)" u="(.*?)" p="(.*?)" shandle="(.*?)"/)){
+		serviceName=RegExp.$1;
+		serviceLogo=RegExp.$2;
+		serviceZip=RegExp.$3;
+		servicePage=RegExp.$4;
+		mycnty=RegExp.$5;
+		mycode=RegExp.$6;
+		u=RegExp.$7;
+		pw=RegExp.$8;
+		shandle=parseFloat(RegExp.$9);
+	}
+	else{return;}
+	for(;;){
+		if(shipProvider.match(/(<method .*?\/>)/)){
+			var method=RegExp.$1;
+			shipProvider=shipProvider.replace(method,'');
+			if(method.match(/<method id="(.*?)" name="(.*?)" rid="(.*?)" regn="(.*?)" code="(.*?)"\/>/)){
+				var id=RegExp.$1,name=RegExp.$2,rid=RegExp.$3,regn=RegExp.$4,code=RegExp.$5;
+				ship.addMeth(id,name);
+				ship.addRegn(rid,regn,code);
+				ship.link(id,rid,0.00,'0',0,'0,0,0',0.00,'0',0.00,0.00,'');
+			}
+		}
+		else{break;}
+	}
+}
+
+var pfbar = new Image();
+pfbar.src = "media/progressbar.gif";
+tf.shipping=this.window;
+tf.greyLoaded=true;
+</script>
+</head>
+<body>
+<form name='form0'><input type='hidden' name='provider' value=''></form>
+</body>
+</html>
+
+
+<!--$Revision: 268 $
+$Archive: /Autobuild/sf_731/ShopFactory_V6/Common Files/parseLang/grey.html $ -->

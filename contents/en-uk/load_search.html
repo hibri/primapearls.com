@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Strict//EN">
+
+<html xmlns:sf lang="en-us" dir="LTR" >
+
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<script>
+	var tf=parent.tf,LD=tf,core=tf.core;
+
+	function ld(name,sf,args) {var s;if(LD)s=eval('LD.'+name);if(!LD||!s)s=(sf)?sf:''; if (args) {var sa=s.split('%%');s='';for (var i=0; i<sa.length; i++) if(args[i]) s+=sa[i]+args[i]; else s+=sa[i];} return s.replace('%%','');}
+	var d=document;function dw(s){d.write(s);} function gl(s){return document.getElementById(s);}
+	</script>
+
+</head>
+
+<body>
+<script>tf.load('utils.html','utils');</script>
+
+<form name="search" action="javascript:tf.utils.search_all();" method="post">
+	<table cellspacing="0" cellpadding="0" border="0">
+<tr>
+	<td valign="middle" width="10" class="Search" ID="Search-.ID"><script>dw('<input class="SearchTextField" type="text" id="phrase" name="phrase" size="12" maxlength="40" value="'+ld('LD_SEARCHPHRASE')+'" onfocus="if(this.value==\''+ld('LD_SEARCHPHRASE')+'\')this.value=\'\';" onblur="if(this.value==\'\')this.value=\''+ld('LD_SEARCHPHRASE')+'\';">');</script></td>
+	<td valign="middle"  width="10"><script>dw('<a class="SearchButton" onmouseover="window.status=\''+ld('LD_SEARCH')+'\';return true;" onmouseout="window.status=\'\';return true" href="JavaScript:var xp=document.getElementById(\'phrase\');if(xp.value==ld(\'LD_SEARCHPHRASE\')){xp.focus();}else{tf.utils.search_all();}" sf:object="SearchButton" ID="SearchButton-.ID"><img width="20" height="20" src="../media/search.png" id="ISearchButtonImage-.ID" name="ISearchButtonImage-.ID" border="0" alt="'+ld('LD_SEARCH')+'" hspace="0" vspace="1" align="" onmouseover="window.status=\''+ld('LD_SEARCH')+'\';return true;" onmouseout="window.status=\'\';return true"></a>');</script></td>
+	
+</tr>
+</table>
+<!--
+Version tag, please don't remove
+$Revision: 6 $
+$Archive: /ShopFactory_V6/Templates/ObjectFragments/Search/OFA1/objectfragment.html $ -->
+
+</form>
+
+</body>
+<script>if(parent!=self)parent.loadCallback(document,window.frameElement.id)</script>
+</html>
+
+<!--
+Version tag, please don't remove
+$Revision: 4 $
+$Archive: /Autobuild/sf_730/ShopFactory_V6/Common Files/parseLang/load_search.html $ -->
