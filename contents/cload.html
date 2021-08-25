@@ -19,7 +19,7 @@ if(!parm['currency'])parm['currency']=tf.shopCurrency.iso+','+tf.shopCurrency.ab
 
 var selectedCurrency=parm['currency'].split(',');
 if(!tf.currencies[selectedCurrency[0]]){
-d.write('<script src="http://services.shopfactory.com/exchange_rates/v6.js"><'+'/script>');
+d.write('<script src="https://services.shopfactory.com/exchange_rates/v6.js"><'+'/script>');
 populateCurrencies();
 }else applyCurrencies();
 
