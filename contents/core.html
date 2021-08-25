@@ -41,28 +41,13 @@ var ping={
 	timer2:null,
 	timer3:[],
 	poll:function(){
-		if(typeof(country_code)=='undefined'){this.timer1=setTimeout("ping.poll()",100);return;}
-		if(active_servers.length>0){for(var tt in this.timer3){clearTimeout(this.timer3[tt]);}this.timer3=[];}
-		clearTimeout(this.timer2);
-		if(country_code!=''&&country_code!='A1'&&country_code!='A2'&&shopRegion.indexOf(country_code)!=0)region=country_code;
-		else if(shopRegion.indexOf(country_code)==0)region=shopRegion;
+	
 	},
 	failed:function(){
-		clearTimeout(this.timer1);
-		this.go(true);
-		if(!region){region=shopRegion;if(tf.utils)tf.utils.populatePrice();}
+		
 	},
 	go:function(all){
-		function id(n){return'ping'+servers[n].replace(/[^a-zA-Z0-9]/g,'');}
-		function url(n){return servers[n]+fake_country+'t='+tf.testShop+'&u='+escape(location.protocol+'//'+location.hostname+tf.wm.baseurl)+'&lmd='+(tf.lmd?tf.lmd['index']:'');}
-		var i=0,servers='http://timecheck.shopfactory.com/ping/v7ping.js,http://secure11.globecharge.com/ping/v7ping.js,http://secure17.globecharge.com/ping/v7ping.js,http://secure18.globecharge.com/ping/v7ping.js,http://secure19.globecharge.com/ping/v7ping.js,http://secure20.globecharge.com/ping/v7ping.js'.split(','),fake_country=(tf.parm&&tf.parm['fake_country'])?'?c='+tf.parm['fake_country']+'&':'?';
-		scr.load(id(i),url(i));
-		if(all){
-			for(i=1;i<servers.length;i++){
-				this.timer3.push(setTimeout("scr.load('"+id(i)+"','"+url(i)+"')",1000*i));
-			}
-		}
-		this.poll();
+		
 	}
 };
 if(!isInSF()){ping.go(false);ping.timer2=setTimeout('ping.failed()',5000);}
